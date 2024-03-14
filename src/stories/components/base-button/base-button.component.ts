@@ -10,15 +10,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BaseButtonComponent {
   @Input() type: 'submit' | 'button' = 'button';
-  @Input() primary = false;
-  @Input() backgroundColor?: string;
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() disable = false;
   @Input() label = 'Button';
   @Output() onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'base-button--primary' : 'base-button--secondary';
-
-    return ['base-button', `base-button--${this.size}`, mode];
+    const mode = this.disable ? '--enable' : '--disable';
+    return ['base-button', `base-button--}`, mode];
   }
 }

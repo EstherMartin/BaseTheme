@@ -1,36 +1,29 @@
 .base-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 1em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  width: 150px;
-}
-
-.base-button--primary {
+  background-color: var(--darkblue-color);
+  font-weight: var(--font-weight-custom);
+  font-size: var(--font-size-custom);
   color: white;
-  background-color: #1ea7fd;
-}
+  min-width: 150px;
+  max-width: fit-content;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
 
-.base-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition:all .5s ease-in-out;
+    background-color: var(--mediumblue-color);
+  }
 
-.base-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
-}
+  &.--enable {
+    cursor: pointer;
+  }
 
-.base-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
-}
-
-.base-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+  &.--disable {
+    pointer-events: none;
+    cursor: none;
+    background-color: var(--darkgrey-color);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
 }

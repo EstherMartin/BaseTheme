@@ -37,7 +37,6 @@ import type { User } from './user';
           </span>
           <base-button
             *ngIf="user"
-            size="small"
             (onClick)="onLogout.emit($event)"
             label="Log out"
           ></base-button>
@@ -45,15 +44,12 @@ import type { User } from './user';
         <div *ngIf="!user">
           <base-button
             *ngIf="!user"
-            size="small"
             class="margin-left"
             (onClick)="onLogin.emit($event)"
             label="Log in"
           ></base-button>
           <base-button
             *ngIf="!user"
-            size="small"
-            [primary]="true"
             class="margin-left"
             (onClick)="onCreateAccount.emit($event)"
             label="Sign up"

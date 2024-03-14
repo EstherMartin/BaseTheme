@@ -2,45 +2,24 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { BaseButtonComponent } from './base-button.component';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<BaseButtonComponent> = {
-  title: 'Example/Button',
+  title: 'Example/Base-Button',
   component: BaseButtonComponent,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
   args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj<BaseButtonComponent>;
 
-export const Primary: Story = {
+export const Enable: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    label: 'Enable',
   },
 };
 
-export const Secondary: Story = {
+export const Disable: Story = {
   args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    label: 'Disable',
   },
 };

@@ -1,7 +1,6 @@
 <button
-[type]="type"
-(click)="onClick.emit($event)"
-[ngClass]="classes"
-[ngStyle]="{ 'background-color': backgroundColor }">
-{{ label }}
+    type="{{type}}"
+    (click)="onClick.emit($event)"
+    [ngClass]="classes">
+    {{ label }}
 </button>
