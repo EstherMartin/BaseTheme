@@ -1,0 +1,32 @@
+
+@import 'src/scss/variables/variables';
+
+.base-input {
+  background-color: $darkblue-color;
+  font-weight: $font-weight-custom;
+  font-size: $font-size-custom;
+  color: white;
+  min-width: 150px;
+  max-width: fit-content;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition:all .5s ease-in-out;
+    background-color: $mediumblue-color;
+  }
+
+  &.--enable {
+    cursor: pointer;
+  }
+
+  &.--disable {
+    pointer-events: none;
+    cursor: none;
+    background-color: $darkgrey-color;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
+}

@@ -1,0 +1,12 @@
+@import './variables/variables.scss';
+
+body {
+    font-family: $font-family;
+    color: $mediumgrey-color;
+}
+
+h1 {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $mediumblue-color;
+}

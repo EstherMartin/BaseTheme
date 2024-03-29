@@ -87,7 +87,7 @@
         },
         {
             "name": "BaseButtonComponent",
-            "id": "component-BaseButtonComponent-ec1adc5d25197af9c94d957a8a3e75cf67438ca7a5cb9ab6abb90f236a8f1ec2fc6120bc107c8c450c4dc5903d7a79b38fec6678a98868c6059146e6ae090afc",
+            "id": "component-BaseButtonComponent-c7f69102267c76b7bc3ac018234dfb8f2d8f9e88de6aa14395ea263d0c19f10d618b4c4c8a4d9fd2fda0c9d6efd27edcb1db3b5aec382af03d8c26c9bef140da",
             "file": "src/stories/components/base-button/base-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -159,11 +159,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-button.component.html',\n  styleUrls: ['./base-button.component.scss'],\n})\nexport class BaseButtonComponent {\n  @Input() type: 'submit' | 'button' = 'button';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.disable ? 'base-button--enable' : 'base-button--disable';\n    return ['base-button', `base-button--}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-button.component.html',\n  styleUrls: ['./base-button.component.scss'],\n})\nexport class BaseButtonComponent {\n  @Input() type: 'submit' | 'button' = 'button';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.disable ? '--disable' : '--enable';\n    return ['base-button', `base-button--}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".base-button {\n  background-color: var(--darkblue-color);\n  font-weight: var(--font-weight-custom);\n  font-size: var(--font-size-custom);\n  color: white;\n  width: 150px;\n  height: 40px;\n  border-radius: 15px;\n  border: none;\n  /* Quitamos el borde */\n  outline: none;\n  /* Quitamos el borde al recibir foco */\n  transition: background-color 0.3s ease;\n  /* Agregamos una transición suave */\n\n  :hover {\n    background-color: var(--mediumblue-color);\n    /* Cambiamos el color de fondo al pasar el ratón */\n  }\n\n  .base-button--enable {\n    cursor: pointer;\n  }\n\n  .base-button--disable {\n    pointer-events: none;\n    cursor: not-allowed;\n    background-color: var(--darkgrey-color);\n    /* Cambiamos el color de fondo */\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n}",
+                    "data": "@import '/src/scss/variables/variables.scss';\n\n.base-button {\n  background-color: $linear-gradient-blue;\n  font-weight: $font-weight-custom;\n  font-size: $font-size-custom;\n  color: $white-color;\n  min-width: 150px;\n  max-width: fit-content;\n  padding: 15px;\n  margin: 20px;\n  border-radius: 15px;\n  border: none;\n\n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\n    transition: all .5s ease-in-out;\n    background-color: $linear-gradient-blue;\n  }\n\n  &.--enable {\n    cursor: pointer;\n  }\n\n  &.--disable {\n    pointer-events: none;\n    cursor: none;\n    background-color: $darkgrey-color;\n  }\n}\n\n.button-87 {\n  margin: 10px;\n  padding: 15px 30px;\n  text-align: center;\n  text-transform: uppercase;\n  transition: 0.5s;\n  background-size: 200% auto;\n  color: white;\n  border-radius: 10px;\n  display: block;\n  border: 0px;\n  font-weight: 700;\n  box-shadow: 0px 0px 14px -7px #f09819;\n  background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-87:hover {\n  background-position: right center;\n  color: #fff;\n  text-decoration: none;\n}\n\n.button-87:active {\n  transform: scale(0.95);\n}\n\n/* CSS */\n.button-78 {\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01, sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  width: auto;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-78 {\n    padding: 19px 32px;\n  }\n}\n\n.button-78:before,\n.button-78:after {\n  border-radius: 80px;\n}\n\n.button-78:before {\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-78:after {\n  background-color: initial;\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  content: \"\";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-78:hover:not(:disabled):before {\n  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);\n}\n\n.button-78:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n  opacity: 0;\n}\n\n.button-78:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-78:active:not(:disabled):before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n}\n\n.button-78:active:not(:disabled):after {\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-78:disabled {\n  cursor: default;\n  opacity: .24;\n}",
                     "styleUrl": "./base-button.component.scss"
                 }
             ],
@@ -181,6 +181,103 @@
                 }
             },
             "templateData": "<button\n    type=\"{{type}}\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\">\n    {{ label }}\n</button>"
+        },
+        {
+            "name": "BaseNormalInputComponent",
+            "id": "component-BaseNormalInputComponent-e304a5f8f418f8f950e771a6321c79de7067588791e0d71265126e65c57f77b72d5d2a4071c6e1eb2e617fac5de16401df2eeb51813d946b87456525f25e09cf",
+            "file": "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "base-normal-input",
+            "styleUrls": [
+                "./base-normal-input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./base-normal-input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'large'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"small\" | \"large\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-normal-input',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-normal-input.component.html',\n  styleUrls: ['./base-normal-input.component.scss'],\n})\nexport class BaseNormalInputComponent {\n  @Input() size: 'small' | 'large' | 'medium' | 'large' = 'large';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let sizeClass;\n    switch (this.size) {\n      case 'small':\n        sizeClass = 'col-12';\n        break;\n      case 'medium':\n        sizeClass = 'col-6';\n        break;\n      case 'large':\n        sizeClass = 'col-3';\n        break;\n      default:\n        sizeClass = 'col';\n    }\n    return ['base-button', sizeClass];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\n@import 'src/scss/variables/variables';\n\n.base-input {\n  background-color: $darkblue-color;\n  font-weight: $font-weight-custom;\n  font-size: $font-size-custom;\n  color: white;\n  min-width: 150px;\n  max-width: fit-content;\n  padding: 15px;\n  border-radius: 15px;\n  border: none;\n\n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\n    transition:all .5s ease-in-out;\n    background-color: $mediumblue-color;\n  }\n\n  &.--enable {\n    cursor: pointer;\n  }\n\n  &.--disable {\n    pointer-events: none;\n    cursor: none;\n    background-color: $darkgrey-color;\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n}",
+                    "styleUrl": "./base-normal-input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<div [ngClass]=\"{\n    'col-12': size === 'small',\n    'col-6': size === 'medium',\n    'col-3': size === 'large'\n    }\" class=\"base-input\">\n    <label for=\"exampleFormControlInput1\" class=\"form-label\">Email address</label>\n    <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">\n</div>"
         },
         {
             "name": "HeaderComponent",
@@ -426,6 +523,15 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "BaseButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BaseNormalInputComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"

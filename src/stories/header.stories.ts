@@ -4,7 +4,7 @@ import { HeaderComponent } from './header.component';
 import { fn } from '@storybook/test';
 
 const meta: Meta<HeaderComponent> = {
-  title: 'Example/Header',
+  title: 'Base-Components/Header',
   component: HeaderComponent,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],

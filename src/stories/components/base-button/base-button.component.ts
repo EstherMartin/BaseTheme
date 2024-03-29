@@ -15,7 +15,7 @@ export class BaseButtonComponent {
   @Output() onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.disable ? '--enable' : '--disable';
+    const mode = this.disable ? '--disable' : '--enable';
     return ['base-button', `base-button--}`, mode];
   }
 }
