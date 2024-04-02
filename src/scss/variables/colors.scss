@@ -22,16 +22,7 @@ $alert-color: #F1C40F;
 $successful-color: #27AE60;
 $notification-color: #85C1E9;
 
-//Gradient
-$linear-gradient-multicolor: linear-gradient(45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000);
-
-$linear-gradient-blue: (#2471A3, #3498db);
+//PrimaryColors
+$primary-color:  $darkblue-color;
+$secondary-color: $mediumblue-color;
+$linear-gradient: linear-gradient(to right, #2471A3, #3498db);

@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "id": "interface-User-23c11020a2831beb3fa02ee911a75b64009c31bb46f73a01145c2560cb13b7f7e641105b678bd8fb01a5a199117001f3da4a78351d29d85d213ed7b82982091f",
             "file": "src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "sourceCode": "export interface User {\r\n  name: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "name",
@@ -87,7 +87,7 @@
         },
         {
             "name": "BaseButtonComponent",
-            "id": "component-BaseButtonComponent-c7f69102267c76b7bc3ac018234dfb8f2d8f9e88de6aa14395ea263d0c19f10d618b4c4c8a4d9fd2fda0c9d6efd27edcb1db3b5aec382af03d8c26c9bef140da",
+            "id": "component-BaseButtonComponent-74561785134787d0806f36fc59d5df718fabafd65379e949479992d470c5ca23e06e6355fb3a67b28e0c021db004241943ec47a6145a409c87ae0a3f9f2c975c",
             "file": "src/stories/components/base-button/base-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -159,11 +159,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-button.component.html',\n  styleUrls: ['./base-button.component.scss'],\n})\nexport class BaseButtonComponent {\n  @Input() type: 'submit' | 'button' = 'button';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.disable ? '--disable' : '--enable';\n    return ['base-button', `base-button--}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'base-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './base-button.component.html',\r\n  styleUrls: ['./base-button.component.scss'],\r\n})\r\nexport class BaseButtonComponent {\r\n  @Input() type: 'submit' | 'button' = 'button';\r\n  @Input() disable = false;\r\n  @Input() label = 'Button';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.disable ? '--disable' : '--enable';\r\n    return ['base-button', `base-button--}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '/src/scss/variables/variables.scss';\n\n.base-button {\n  background-color: $linear-gradient-blue;\n  font-weight: $font-weight-custom;\n  font-size: $font-size-custom;\n  color: $white-color;\n  min-width: 150px;\n  max-width: fit-content;\n  padding: 15px;\n  margin: 20px;\n  border-radius: 15px;\n  border: none;\n\n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\n    transition: all .5s ease-in-out;\n    background-color: $linear-gradient-blue;\n  }\n\n  &.--enable {\n    cursor: pointer;\n  }\n\n  &.--disable {\n    pointer-events: none;\n    cursor: none;\n    background-color: $darkgrey-color;\n  }\n}\n\n.button-87 {\n  margin: 10px;\n  padding: 15px 30px;\n  text-align: center;\n  text-transform: uppercase;\n  transition: 0.5s;\n  background-size: 200% auto;\n  color: white;\n  border-radius: 10px;\n  display: block;\n  border: 0px;\n  font-weight: 700;\n  box-shadow: 0px 0px 14px -7px #f09819;\n  background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);\n  cursor: pointer;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\n\n.button-87:hover {\n  background-position: right center;\n  color: #fff;\n  text-decoration: none;\n}\n\n.button-87:active {\n  transform: scale(0.95);\n}\n\n/* CSS */\n.button-78 {\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01, sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  width: auto;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-78 {\n    padding: 19px 32px;\n  }\n}\n\n.button-78:before,\n.button-78:after {\n  border-radius: 80px;\n}\n\n.button-78:before {\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  content: \"\";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-78:after {\n  background-color: initial;\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  content: \"\";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-78:hover:not(:disabled):before {\n  background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);\n}\n\n.button-78:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n  opacity: 0;\n}\n\n.button-78:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-78:active:not(:disabled):before {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n}\n\n.button-78:active:not(:disabled):after {\n  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-78:disabled {\n  cursor: default;\n  opacity: .24;\n}",
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-button {\r\n  border-radius: 15px;\r\n  font-size: $font-size-custom;\r\n  font-weight: $font-weight-custom;\r\n  margin: 20px;\r\n  max-width: fit-content;\r\n  min-width: 150px;\r\n  padding: 15px;\r\n  border: none;\r\n  color: $white-color;\r\n\r\n  &.--enable {\r\n    background-color: $primary-color;\r\n    cursor: pointer;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n\r\n    &:hover {\r\n      background-color: $secondary-color;\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 5px 5px $darkgrey-color;\r\n    }\r\n  \r\n    &:active {\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 2px 2px $darkgrey-color;\r\n    }\r\n  }\r\n\r\n  &.--disable {\r\n    pointer-events: none;\r\n    background-color: $darkgrey-color;  \r\n    cursor: none;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n  }\r\n}",
                     "styleUrl": "./base-button.component.scss"
                 }
             ],
@@ -180,11 +180,11 @@
                     }
                 }
             },
-            "templateData": "<button\n    type=\"{{type}}\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\">\n    {{ label }}\n</button>"
+            "templateData": "<button\r\n    type=\"{{type}}\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\">\r\n    {{ label }}\r\n</button>"
         },
         {
             "name": "BaseNormalInputComponent",
-            "id": "component-BaseNormalInputComponent-e304a5f8f418f8f950e771a6321c79de7067588791e0d71265126e65c57f77b72d5d2a4071c6e1eb2e617fac5de16401df2eeb51813d946b87456525f25e09cf",
+            "id": "component-BaseNormalInputComponent-e35d9d6ba525795e15f055ceffefa14e30e34edd4138701172592b32ef8296a13af4cecd67e7c1c1ca592b3952a1e0d9a9b1bf96a242364b5ee3ec0e15700fee",
             "file": "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -207,7 +207,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -216,7 +216,16 @@
                     "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -225,8 +234,8 @@
                     "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
-                    "type": "\"small\" | \"large\" | \"medium\" | \"large\"",
+                    "line": 13,
+                    "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
             ],
@@ -236,7 +245,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 17,
                     "type": "EventEmitter"
                 }
             ],
@@ -256,11 +265,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-normal-input',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-normal-input.component.html',\n  styleUrls: ['./base-normal-input.component.scss'],\n})\nexport class BaseNormalInputComponent {\n  @Input() size: 'small' | 'large' | 'medium' | 'large' = 'large';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let sizeClass;\n    switch (this.size) {\n      case 'small':\n        sizeClass = 'col-12';\n        break;\n      case 'medium':\n        sizeClass = 'col-6';\n        break;\n      case 'large':\n        sizeClass = 'col-3';\n        break;\n      default:\n        sizeClass = 'col';\n    }\n    return ['base-button', sizeClass];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'base-normal-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './base-normal-input.component.html',\r\n  styleUrls: ['./base-normal-input.component.scss'],\r\n})\r\n\r\nexport class BaseNormalInputComponent {\r\n  @Input() size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() disable = false;\r\n  @Input() label = 'Button';\r\n  @Input() placeholder = '';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    return ['base-input' + this.size];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n@import 'src/scss/variables/variables';\n\n.base-input {\n  background-color: $darkblue-color;\n  font-weight: $font-weight-custom;\n  font-size: $font-size-custom;\n  color: white;\n  min-width: 150px;\n  max-width: fit-content;\n  padding: 15px;\n  border-radius: 15px;\n  border: none;\n\n  &:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\n    transition:all .5s ease-in-out;\n    background-color: $mediumblue-color;\n  }\n\n  &.--enable {\n    cursor: pointer;\n  }\n\n  &.--disable {\n    pointer-events: none;\n    cursor: none;\n    background-color: $darkgrey-color;\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n}",
+                    "data": "\r\n@import 'src/scss/variables/variables';\r\n\r\n.base-input {\r\n  background-color: $darkblue-color;\r\n  font-weight: $font-weight-custom;\r\n  font-size: $font-size-custom;\r\n  color: white;\r\n  min-width: 150px;\r\n  max-width: fit-content;\r\n  padding: 15px;\r\n  border-radius: 15px;\r\n  border: none;\r\n\r\n  &:hover {\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\r\n    transition:all .5s ease-in-out;\r\n    background-color: $mediumblue-color;\r\n  }\r\n\r\n  &.--enable {\r\n    cursor: pointer;\r\n  }\r\n\r\n  &.--disable {\r\n    pointer-events: none;\r\n    cursor: none;\r\n    background-color: $darkgrey-color;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n  }\r\n}",
                     "styleUrl": "./base-normal-input.component.scss"
                 }
             ],
@@ -273,15 +282,15 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 17
+                        "line": 19
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"{\n    'col-12': size === 'small',\n    'col-6': size === 'medium',\n    'col-3': size === 'large'\n    }\" class=\"base-input\">\n    <label for=\"exampleFormControlInput1\" class=\"form-label\">Email address</label>\n    <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n    <label> {{label}} </label>\r\n    <input type=\"text\" [placeholder]=\"placeholder\">\r\n</div>"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-f502ec4d2c695dfe405321483b65bd00f9a23e5e5c1686267c3a99bfe27dd934cd22f69f3f773bcab592e39f2d9da54bb0d27521a2baaa0514a65283525907ee",
+            "id": "component-HeaderComponent-2a5f98b6f1c297cd369f8d710ceb55031aa1d9774a6c36404b3ede1a3e22717729be2421f4b8a95277c666be01c20a2d5f3b2981f0fe7c8b9a37d6b21787dab0",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,11 +363,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { BaseButtonComponent } from './components/base-button/base-button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, BaseButtonComponent],\n  template: `<header>\n    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <base-button\n            *ngIf=\"user\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></base-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <base-button\n            *ngIf=\"!user\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></base-button>\n          <base-button\n            *ngIf=\"!user\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></base-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { BaseButtonComponent } from './components/base-button/base-button.component';\r\nimport type { User } from './user';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  standalone: true,\r\n  imports: [CommonModule, BaseButtonComponent],\r\n  template: `<header>\r\n    <div class=\"storybook-header\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <base-button\r\n            *ngIf=\"user\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></base-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <base-button\r\n            *ngIf=\"!user\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></base-button>\r\n          <base-button\r\n            *ngIf=\"!user\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></base-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-header {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "data": ".storybook-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.storybook-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.storybook-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -367,7 +376,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-d32b0f19628254ea3fc5526c4d4564ada1cc83cf936759006d90a46f5874b02a3359e331bddda20b22e74a616a6443c660602ba74dd38ebe1160759e0de6f7ba",
+            "id": "component-PageComponent-92f4cc9cc0054ccf9d578fc1ebe06b6d7ed1424277151dbedd6cfe73ba15609d9919dcba6e9acbd021b43117d9ce1f28adf6630c681037299b01a4c726c15a8e",
             "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -447,11 +456,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { HeaderComponent } from './header.component';\r\nimport type { User } from './user';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  standalone: true,\r\n  imports: [CommonModule, HeaderComponent],\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></storybook-header>\r\n    <section class=\"storybook-page\">\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-page {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\n.storybook-page h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\n.storybook-page ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.storybook-page .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": ".storybook-page {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\n.storybook-page h2 {\r\n  font-weight: 700;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-page p {\r\n  margin: 1em 0;\r\n}\r\n\r\n.storybook-page a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\n.storybook-page ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\n.storybook-page li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.storybook-page .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-page .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -533,7 +542,7 @@
                 "linktype": "component",
                 "name": "BaseNormalInputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

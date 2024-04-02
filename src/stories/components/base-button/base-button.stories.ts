@@ -15,11 +15,13 @@ type Story = StoryObj<BaseButtonComponent>;
 export const Enable: Story = {
   args: {
     label: 'Enable',
+    disable: false,
   },
 };
 
 export const Disable: Story = {
   args: {
     label: 'Disable',
+    disable: true,
   },
 };
