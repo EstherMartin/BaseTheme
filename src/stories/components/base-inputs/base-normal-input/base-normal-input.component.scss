@@ -1,32 +1,71 @@
-
 @import 'src/scss/variables/variables';
 
 .base-input {
-  background-color: $darkblue-color;
-  font-weight: $font-weight-custom;
-  font-size: $font-size-custom;
-  color: white;
-  min-width: 150px;
-  max-width: fit-content;
-  padding: 15px;
   border-radius: 15px;
   border: none;
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  padding: 15px;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition:all .5s ease-in-out;
-    background-color: $mediumblue-color;
+  .error-shadow {
+    box-shadow: 0 0 0 2px red; /* Cambia el color de la sombra a rojo */
   }
 
-  &.--enable {
-    cursor: pointer;
+  label {
+    color: $black-color;
+    font-size: $font-size-custom;
+    font-weight: $font-weight-regular;
+    padding: 10px 0;
   }
 
-  &.--disable {
-    pointer-events: none;
-    cursor: none;
-    background-color: $darkgrey-color;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  input {
+    border-radius: 5px;
+    color: $black-color;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    text-align: end;
+
+    &::placeholder {
+      color: $darkgrey-color;
+    }
+
+    &#error {
+      box-shadow: 0 5px 5px $danger-color;
+    }
+    
+    &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      background-color: $mediumgrey-color;
+      border: 2px solid $darkgrey-color;
+      box-shadow: none;
+    }
+
+    &.enabled {
+      border: 2px solid $primary-color;
+      background-color: $white-color;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border-color: $secondary-color;
+        transition: border-color 0.3s ease;
+        box-shadow: 0 5px 5px $darkgrey-color;
+      }
+    }
+  }
+
+  &.--small {
+    width: 25%;
+  }
+
+  &.--medium {
+    width: 50%;
+  }
+
+  &.--large {
+    width: 100%;
   }
 }

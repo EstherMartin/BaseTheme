@@ -14,12 +14,16 @@ type Story = StoryObj<BaseNormalInputComponent>;
 
 export const Enable: Story = {
   args: {
-    label: 'Enable',
+    label: 'Enable Input',
+    placeholder:'Enable',
+    disabled: false,
   },
 };
 
 export const Disable: Story = {
   args: {
-    label: 'Disable',
+    label: 'Disable Input',
+    placeholder:'Disable',
+    disabled: true,
   },
 };
