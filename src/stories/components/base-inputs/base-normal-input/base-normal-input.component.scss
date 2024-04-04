@@ -47,6 +47,10 @@
       border: 2px solid $primary-color;
       background-color: $white-color;
       cursor: pointer;
+      
+      &.required {
+        background-color: red;
+      }
 
       &:focus {
         outline: none;

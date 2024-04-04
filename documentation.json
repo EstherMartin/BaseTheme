@@ -184,7 +184,7 @@
         },
         {
             "name": "BaseNormalInputComponent",
-            "id": "component-BaseNormalInputComponent-61c29aedf26db3ddf2d7117551a975bb1a43223f19456417563536f2243f7be23e72363dd8cadfde8b16a85c88b72ec23cf5661c0d1c22642a3c9dc6c4e45c72",
+            "id": "component-BaseNormalInputComponent-1d00e241aa3e5b16585280eaa4fd2a741569d3966c2ea8d01c1bb741756cf66fda834809557a69a03205faf9504c8d5b68f95a84e8ff940e8f8ff1562709ce32",
             "file": "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -207,7 +207,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -215,8 +215,16 @@
                     "name": "formControl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 21,
                     "type": "FormControl",
+                    "decorators": []
+                },
+                {
+                    "name": "formValidator",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string[]",
                     "decorators": []
                 },
                 {
@@ -224,7 +232,7 @@
                     "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -233,8 +241,17 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -242,7 +259,7 @@
                     "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 },
@@ -251,7 +268,7 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 }
@@ -262,12 +279,53 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 22,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "error",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "formControlValidators",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "getErrorMessage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -285,16 +343,20 @@
                 {
                     "name": "FormsModule",
                     "type": "module"
+                },
+                {
+                    "name": "FontAwesomeModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'base-normal-input',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FormsModule],\r\n  templateUrl: './base-normal-input.component.html',\r\n  styleUrls: ['./base-normal-input.component.scss'],\r\n})\r\nexport class BaseNormalInputComponent {\r\n  @Input() size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() type ='text'\r\n  @Input() disabled = false;\r\n  @Input() label = 'Button';\r\n  @Input() placeholder = '';\r\n  @Input() formControl!: FormControl;\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let sizeClass;\r\n    switch (this.size) {\r\n      case 'small':\r\n        sizeClass = '--small';\r\n        break;\r\n      case 'medium':\r\n        sizeClass = '--medium';\r\n        break;\r\n      case 'large':\r\n        sizeClass = '--large';\r\n        break;\r\n      default:\r\n        sizeClass = '--large';\r\n    }\r\n    return ['base-input', `base-input--${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled? 'disabled' : 'enabled'\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';\r\nimport { emailValidator } from '../validators/email.validator';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\n@Component({\r\n  selector: 'base-normal-input',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FormsModule, FontAwesomeModule ],\r\n  templateUrl: './base-normal-input.component.html',\r\n  styleUrls: ['./base-normal-input.component.scss'],\r\n})\r\nexport class BaseNormalInputComponent {\r\n  @Input() size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() type = 'text'\r\n  @Input() disabled = false;\r\n  @Input() label = 'Button';\r\n  @Input() placeholder = '';\r\n  @Input() required = false;\r\n  @Input() formValidator!: string[];\r\n  @Input() formControl!: FormControl;\r\n  @Output() onClick = new EventEmitter<Event>();\r\n  public error = false;\r\n\r\n  public get classes(): string[] {\r\n    let sizeClass;\r\n    switch (this.size) {\r\n      case 'small':\r\n        sizeClass = '--small';\r\n        break;\r\n      case 'medium':\r\n        sizeClass = '--medium';\r\n        break;\r\n      case 'large':\r\n        sizeClass = '--large';\r\n        break;\r\n      default:\r\n        sizeClass = '--large';\r\n    }\r\n    return ['base-input', `base-input--${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled? 'disabled' : 'enabled';\r\n  }\r\n\r\n  public get isRequired(): string {\r\n    return this.required? 'required' : '';\r\n  }\r\n\r\n  public formControlValidators(): boolean {\r\n    if (this.type === 'email') {\r\n      this.formControl.setValidators([\r\n        Validators.required,\r\n        emailValidator(),\r\n      ]);\r\n    } else {\r\n      this.formControl.setValidators(Validators.required);\r\n    }\r\n\r\n    this.formControl.updateValueAndValidity();\r\n    this.error = this.formControl.invalid && this.formControl.touched;\r\n    return this.error;\r\n  }\r\n\r\n  public getErrorMessage(): string {\r\n    const errors = this.formControl.errors;\r\n    if (errors) {\r\n        if (errors['required']) {\r\n            return 'Este campo es obligatorio.';\r\n        } else if (errors['invalidEmail']) {\r\n            return 'El email no es válido.';\r\n        }\r\n    }\r\n    return '';\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'src/scss/variables/variables';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-width: fit-content;\r\n  padding: 15px;\r\n\r\n  label {\r\n    color: $black-color;\r\n    font-size: $font-size-custom;\r\n    font-weight: $font-weight-regular;\r\n    padding: 10px 0;\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &::placeholder {\r\n      color: $darkgrey-color;\r\n    }\r\n\r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--small {\r\n    width: 25%;\r\n  }\r\n\r\n  &.--medium {\r\n    width: 50%;\r\n  }\r\n\r\n  &.--large {\r\n    width: 100%;\r\n  }\r\n}",
+                    "data": "@import 'src/scss/variables/variables';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-width: fit-content;\r\n  padding: 15px;\r\n\r\n  .error-shadow {\r\n    box-shadow: 0 0 0 2px red; /* Cambia el color de la sombra a rojo */\r\n  }\r\n\r\n  label {\r\n    color: $black-color;\r\n    font-size: $font-size-custom;\r\n    font-weight: $font-weight-regular;\r\n    padding: 10px 0;\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &::placeholder {\r\n      color: $darkgrey-color;\r\n    }\r\n\r\n    &#error {\r\n      box-shadow: 0 5px 5px $danger-color;\r\n    }\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--small {\r\n    width: 25%;\r\n  }\r\n\r\n  &.--medium {\r\n    width: 50%;\r\n  }\r\n\r\n  &.--large {\r\n    width: 100%;\r\n  }\r\n}",
                     "styleUrl": "./base-normal-input.component.scss"
                 }
             ],
@@ -307,7 +369,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 21
+                        "line": 25
                     }
                 },
                 "isDisabled": {
@@ -316,11 +378,20 @@
                         "name": "isDisabled",
                         "type": "string",
                         "returnType": "string",
-                        "line": 39
+                        "line": 43
+                    }
+                },
+                "isRequired": {
+                    "name": "isRequired",
+                    "getSignature": {
+                        "name": "isRequired",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 47
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\r\n    <label [for]=\"formControl\">{{label}}</label>\r\n    <input [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"formControl\">\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n    <label [for]=\"formControl\">{{label}}\r\n      <i class=\"fa-solid fa-asterisk\"></i>\r\n    </label> \r\n    <input [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"formControl\">\r\n    <div class=\"alert\" *ngIf=\"formControl.errors && formControl.touched\">\r\n        {{ getErrorMessage() }}\r\n    </div>\r\n</div>"
         },
         {
             "name": "HeaderComponent",
@@ -516,7 +587,19 @@
                 "defaultValue": "{\r\n  providers: [provideRouter(routes)]\r\n}"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "emailValidator",
+                "file": "src/stories/components/base-inputs/validators/email.validator.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [],
+                "returnType": "ValidatorFn"
+            }
+        ],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
@@ -533,7 +616,21 @@
                 }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "src/stories/components/base-inputs/validators/email.validator.ts": [
+                {
+                    "name": "emailValidator",
+                    "file": "src/stories/components/base-inputs/validators/email.validator.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [],
+                    "returnType": "ValidatorFn"
+                }
+            ]
+        },
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
@@ -576,7 +673,17 @@
                 "linktype": "component",
                 "name": "BaseNormalInputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/base-inputs/validators/email.validator.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "emailValidator",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

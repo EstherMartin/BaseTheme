@@ -6,6 +6,8 @@ setCompodocJson(docJson);
 const preview: Preview = {
   parameters: {
     controls: {
+      expanded: true,
+      hideNoControlsWarning: true,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
@@ -14,4 +16,3 @@ const preview: Preview = {
   },
 };
 
-export default preview;

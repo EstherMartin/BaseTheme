@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { emailValidator } from '../validators/email.validator';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'base-normal-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, FontAwesomeModule ],
   templateUrl: './base-normal-input.component.html',
   styleUrls: ['./base-normal-input.component.scss'],
 })
@@ -16,6 +16,8 @@ export class BaseNormalInputComponent {
   @Input() disabled = false;
   @Input() label = 'Button';
   @Input() placeholder = '';
+  @Input() required = false;
+  @Input() formValidator!: string[];
   @Input() formControl!: FormControl;
   @Output() onClick = new EventEmitter<Event>();
   public error = false;
@@ -40,6 +42,10 @@ export class BaseNormalInputComponent {
 
   public get isDisabled(): string {
     return this.disabled? 'disabled' : 'enabled';
+  }
+
+  public get isRequired(): string {
+    return this.required? 'required' : '';
   }
 
   public formControlValidators(): boolean {

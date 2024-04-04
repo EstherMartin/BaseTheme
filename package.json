@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run BaseTheme:storybook",
-    "build-storybook": "ng run BaseTheme:build-storybook"
+    "build-storybook": "ng run BaseTheme:build-storybook",
+    "docs:json": "compodoc -p tsconfig.json -e json -d ./documentation"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,15 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
+    "@fortawesome/angular-fontawesome": "^0.14.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@popperjs/core": "^2.11.8",
+    "@storybook/addon-styling-webpack": "^1.0.0",
+    "bootstrap": "^5.3.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
+    "style-loader": "^3.3.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -34,8 +43,9 @@
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-interactions": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
+    "@storybook/addon-themes": "^8.0.0",
     "@storybook/angular": "^8.0.0",
-    "@storybook/blocks": "^8.0.0",
+    "@storybook/blocks": "^8.0.5",
     "@storybook/test": "^8.0.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
