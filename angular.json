@@ -119,6 +119,10 @@
               "-d",
               "."
             ],
+            "styles": [
+              "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.scss",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+          ],
             "port": 6006
           }
         },

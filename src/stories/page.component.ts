@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HeaderComponent } from './header.component';
 import type { User } from './user';
 
 @Component({
-  selector: 'storybook-page',
-  standalone: true,
-  imports: [CommonModule, HeaderComponent],
-  template: `<article>
+    selector: 'storybook-page',
+    standalone: true,
+    template: `<article>
     <storybook-header
       [user]="user"
       (onLogout)="doLogout()"
@@ -63,7 +61,8 @@ import type { User } from './user';
       </div>
     </section>
   </article>`,
-  styleUrls: ['./page.css'],
+    styleUrls: ['./page.css'],
+    imports: [CommonModule, HeaderComponent]
 })
 export class PageComponent {
   user: User | null = null;

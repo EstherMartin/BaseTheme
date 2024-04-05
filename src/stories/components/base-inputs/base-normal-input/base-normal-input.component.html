@@ -1,9 +1,14 @@
-<div [ngClass]="classes">
-    <label [for]="formControl">{{label}}
-      <i class="fa-solid fa-asterisk"></i>
+<div 
+  [ngClass]="classes">
+    <label 
+      [for]="control">{{label}}
+      <i class="bi bi-1-circle-fill"></i>
     </label> 
-    <input [ngClass]="isDisabled" [type]="type" [placeholder]="placeholder" [formControl]="formControl">
-    <div class="alert" *ngIf="formControl.errors && formControl.touched">
-        {{ getErrorMessage() }}
-    </div>
+    <input 
+      BaseNormalInputFormat
+      [ngClass]="isDisabled" 
+      [type]="type" 
+      [placeholder]="placeholder" 
+      [formControl]="control"
+      [required]="required">
 </div>
