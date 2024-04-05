@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/scss/styles.scss",
               "src/scss/variables/variables.scss"
@@ -96,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/scss/styles.scss",
               "src/scss/variables/variables.scss"
@@ -120,9 +122,12 @@
               "."
             ],
             "styles": [
-              "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.scss",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-          ],
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/scss/styles.scss",
+              "src/scss/variables/variables.scss",
+              "src/stories/components/base-inputs/base-normal-input/base-normal-input.component.scss"
+            ],
             "port": 6006
           }
         },

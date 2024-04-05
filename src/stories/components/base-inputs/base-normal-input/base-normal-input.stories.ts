@@ -15,6 +15,7 @@ export const Enable: Story = {
     label: 'Enable Input',
     placeholder: 'Enable',
     disabled: false,
+    required: true,
   },
 };
 
@@ -23,5 +24,6 @@ export const Disable: Story = {
     label: 'Disable Input',
     placeholder:'Disable',
     disabled: true,
+    required: false,
   },
 };

@@ -8,15 +8,21 @@
   max-width: fit-content;
   padding: 15px;
 
-  .error-shadow {
-    box-shadow: 0 0 0 2px red; /* Cambia el color de la sombra a rojo */
-  }
+  .base-label-input {
+    display: flex;
+    align-items: center;
 
-  label {
-    color: $black-color;
-    font-size: $font-size-custom;
-    font-weight: $font-weight-regular;
-    padding: 10px 0;
+    label {
+      color: $black-color;
+      font-size: $font-size-custom;
+      font-weight: $font-weight-regular;
+      padding: 10px 0;
+      margin-right: 10px ;
+    }
+
+    i {
+      color: $danger-color;
+    }
   }
 
   input {

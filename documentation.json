@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-23c11020a2831beb3fa02ee911a75b64009c31bb46f73a01145c2560cb13b7f7e641105b678bd8fb01a5a199117001f3da4a78351d29d85d213ed7b82982091f",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\r\n  name: string;\r\n}\r\n",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
             "properties": [
                 {
                     "name": "name",
@@ -204,7 +204,7 @@
         },
         {
             "name": "BaseButtonComponent",
-            "id": "component-BaseButtonComponent-74561785134787d0806f36fc59d5df718fabafd65379e949479992d470c5ca23e06e6355fb3a67b28e0c021db004241943ec47a6145a409c87ae0a3f9f2c975c",
+            "id": "component-BaseButtonComponent-c7f69102267c76b7bc3ac018234dfb8f2d8f9e88de6aa14395ea263d0c19f10d618b4c4c8a4d9fd2fda0c9d6efd27edcb1db3b5aec382af03d8c26c9bef140da",
             "file": "src/stories/components/base-button/base-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -276,7 +276,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'base-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './base-button.component.html',\r\n  styleUrls: ['./base-button.component.scss'],\r\n})\r\nexport class BaseButtonComponent {\r\n  @Input() type: 'submit' | 'button' = 'button';\r\n  @Input() disable = false;\r\n  @Input() label = 'Button';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.disable ? '--disable' : '--enable';\r\n    return ['base-button', `base-button--}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'base-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './base-button.component.html',\n  styleUrls: ['./base-button.component.scss'],\n})\nexport class BaseButtonComponent {\n  @Input() type: 'submit' | 'button' = 'button';\n  @Input() disable = false;\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.disable ? '--disable' : '--enable';\n    return ['base-button', `base-button--}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -433,7 +433,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-width: fit-content;\r\n  padding: 15px;\r\n\r\n  .error-shadow {\r\n    box-shadow: 0 0 0 2px red; /* Cambia el color de la sombra a rojo */\r\n  }\r\n\r\n  label {\r\n    color: $black-color;\r\n    font-size: $font-size-custom;\r\n    font-weight: $font-weight-regular;\r\n    padding: 10px 0;\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &::placeholder {\r\n      color: $darkgrey-color;\r\n    }\r\n\r\n    &#error {\r\n      box-shadow: 0 5px 5px $danger-color;\r\n    }\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--small {\r\n    width: 25%;\r\n  }\r\n\r\n  &.--medium {\r\n    width: 50%;\r\n  }\r\n\r\n  &.--large {\r\n    width: 100%;\r\n  }\r\n}",
+                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-width: fit-content;\r\n  padding: 15px;\r\n\r\n  .base-label-input {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-regular;\r\n      padding: 10px 0;\r\n      margin-right: 10px ;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &::placeholder {\r\n      color: $darkgrey-color;\r\n    }\r\n\r\n    &#error {\r\n      box-shadow: 0 5px 5px $danger-color;\r\n    }\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--small {\r\n    width: 25%;\r\n  }\r\n\r\n  &.--medium {\r\n    width: 50%;\r\n  }\r\n\r\n  &.--large {\r\n    width: 100%;\r\n  }\r\n}",
                     "styleUrl": "./base-normal-input.component.scss"
                 }
             ],
@@ -468,7 +468,7 @@
                     }
                 }
             },
-            "templateData": "<div \r\n  [ngClass]=\"classes\">\r\n    <label \r\n      [for]=\"control\">{{label}}\r\n      <i class=\"bi bi-1-circle-fill\"></i>\r\n    </label> \r\n    <input \r\n      BaseNormalInputFormat\r\n      [ngClass]=\"isDisabled\" \r\n      [type]=\"type\" \r\n      [placeholder]=\"placeholder\" \r\n      [formControl]=\"control\"\r\n      [required]=\"required\">\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-input\">\r\n    <label [for]=\"control\">{{label}}\r\n    </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <input BaseNormalInputFormat [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"control\"\r\n    [required]=\"required\">\r\n</div>"
         },
         {
             "name": "HeaderComponent",
