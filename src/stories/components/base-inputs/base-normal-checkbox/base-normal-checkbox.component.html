@@ -1,0 +1,15 @@
+<div [ngClass]="classes">
+  <div class="base-label-checkbox">
+    <label [for]="control"> {{label}} </label>
+    <i *ngIf="required" class="fa fa-asterisk"></i>
+  </div>
+  <div class="base-body-checkbox--column">
+    <div *ngFor="let item of items">
+      <input type="checkbox" (change)="onChange(item, $event)">
+      <label for="item"> {{ item }} </label>
+    </div>
+  </div>
+  <div *ngIf="hasErrorMessage" [ngClass]="errorClasses">
+    <label [for]="control"> {{errorMessage}} </label>
+  </div>
+</div>

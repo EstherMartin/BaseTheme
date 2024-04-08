@@ -1,0 +1,123 @@
+@import '../../../../scss/variables/variables.scss';
+
+.base-checkbox {
+
+  &--small {
+    max-width: 25%;
+  }
+
+  &--medium {
+    max-width: 50%;
+  }
+
+  &--large {
+    max-width: 100%;
+  }
+
+  .base-label-checkbox {
+
+    label {
+      color: $black-color;
+      font-size: $font-size-custom;
+      font-weight: $font-weight-custom;
+      padding: 10px 0;
+      margin-right: 10px;
+    }
+
+    i {
+      color: $danger-color;
+    }
+  }
+
+  .base-body-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &--row {
+      flex-direction: row;
+    }
+  
+    &--column {
+      flex-direction: column;
+    }
+
+    label {
+      color: $black-color;
+      font-size: $font-size-custom;
+      font-weight: $font-weight-custom;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    input {
+      border-radius: 5px;
+      border: 2px solid $primary-color;
+      font-size: 16px;
+      padding: 10px;
+      text-align: end;
+
+
+      &#error {
+        box-shadow: 0 5px 5px $danger-color;
+      }
+      
+
+      &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: $mediumgrey-color;
+        border: 2px solid $darkgrey-color;
+        box-shadow: none;
+        color: $black-color;
+      }
+
+      &.enabled {
+        border: 2px solid $primary-color;
+        background-color: $white-color;
+        cursor: pointer;
+
+        &::placeholder {
+          color: $darkgrey-color;
+        }
+
+        &.required {
+          background-color: red;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $secondary-color;
+          transition: border-color 0.3s ease;
+          box-shadow: 0 5px 5px $darkgrey-color;
+        }
+      }
+    }
+  }
+
+  .error-message-checkbox {
+    border: 2px solid $danger-color;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    padding: 10px;
+    background-color: #FFCCCC;
+
+    &--small {
+      max-width: 25%;
+    }
+
+    &--medium {
+      max-width: 50%;
+    }
+
+    &--large {
+      max-width: 100%;
+    }
+
+    label {
+      color: $danger-color;
+      font-size: $font-size-small;
+      font-weight: $font-weight-custom;
+    }
+  }
+}

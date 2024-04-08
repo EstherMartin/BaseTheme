@@ -3,12 +3,6 @@ import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-export enum SizeValues {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large',
-}
-
 @Component({
   selector: 'base-normal-input',
   standalone: true,
@@ -20,13 +14,13 @@ export enum SizeValues {
 export class BaseNormalInputComponent {
   @Input() public size: 'small' | 'medium' | 'large' = 'large';
   @Input() public type = 'text';
-  @Input() public disabled = false;
-  @Input() public label = 'Button';
+  @Input() public label = 'Input';
   @Input() public placeholder = '';
-  @Input() public required = false;
   @Input() public control!: FormControl;
   @Input() public formValidator!: string[];
   @Input() public errorMessage!: string;
+  @Input() public required = false;
+  @Input() public disabled = false;
 
   public get classes(): string[] {
     const sizeClass = `--${this.size}`;
@@ -47,7 +41,6 @@ export class BaseNormalInputComponent {
   }
 
   public get hasErrorMessage(): boolean {
-    console.log(!!this.errorMessage)
     return !!this.errorMessage;
   }
 }
