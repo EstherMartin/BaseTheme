@@ -14,8 +14,10 @@ export const Enable: Story = {
   args: {
     label: 'Enable Input',
     placeholder: 'Enable',
+    size: "small",
     disabled: false,
     required: true,
+    errorMessage: 'mensaje de error de muestra'
   },
 };
 

@@ -1,9 +1,11 @@
 <div [ngClass]="classes">
   <div class="base-label-input">
-    <label [for]="control">{{label}}
-    </label>
+    <label [for]="control"> {{label}} </label>
     <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
-  <input BaseNormalInputFormat [ngClass]="isDisabled" [type]="type" [placeholder]="placeholder" [formControl]="control"
+  <input [ngClass]="isDisabled" [type]="type" [placeholder]="placeholder" [formControl]="control"
     [required]="required">
+  <div *ngIf="hasErrorMessage" [ngClass]="errorClasses">
+    <label [for]="control"> {{errorMessage}} </label>
+  </div>
 </div>

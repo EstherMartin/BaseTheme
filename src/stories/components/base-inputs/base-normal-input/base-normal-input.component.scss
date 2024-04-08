@@ -5,8 +5,19 @@
   border: none;
   display: flex;
   flex-direction: column;
-  max-width: fit-content;
   padding: 15px;
+
+  &--small {
+    max-width: 25%;
+  }
+
+  &--medium {
+    max-width: 50%;
+  }
+
+  &--large {
+    max-width: 100%;
+  }
 
   .base-label-input {
     display: flex;
@@ -15,7 +26,7 @@
     label {
       color: $black-color;
       font-size: $font-size-custom;
-      font-weight: $font-weight-regular;
+      font-weight: $font-weight-custom;
       padding: 10px 0;
       margin-right: 10px ;
     }
@@ -33,10 +44,6 @@
     width: 100%;
     text-align: end;
 
-    &::placeholder {
-      color: $darkgrey-color;
-    }
-
     &#error {
       box-shadow: 0 5px 5px $danger-color;
     }
@@ -47,12 +54,21 @@
       background-color: $mediumgrey-color;
       border: 2px solid $darkgrey-color;
       box-shadow: none;
+      color: $black-color;
+
+      &::placeholder {
+        color: $white-color;
+      }
     }
 
     &.enabled {
       border: 2px solid $primary-color;
       background-color: $white-color;
       cursor: pointer;
+
+      &::placeholder {
+        color: $darkgrey-color;
+      }
       
       &.required {
         background-color: red;
@@ -67,15 +83,28 @@
     }
   }
 
-  &.--small {
-    width: 25%;
-  }
+  .error-message-input {
+    border: 2px solid $danger-color;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FFCCCC;
 
-  &.--medium {
-    width: 50%;
-  }
-
-  &.--large {
-    width: 100%;
+    &--small {
+      max-width: 25%;
+    }
+  
+    &--medium {
+      max-width: 50%;
+    }
+  
+    &--large {
+      max-width: 100%;
+    }
+  
+    label {
+      color: $danger-color;
+      font-size: $font-size-small;
+      font-weight: $font-weight-custom;
+    }
   }
 }
