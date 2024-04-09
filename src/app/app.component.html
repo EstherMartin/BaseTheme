@@ -1,10 +1,32 @@
 <form [formGroup]="myForm">
-  <base-normal-input
+  <base-input
     [label]="'Input en prueba'"
     [placeholder]="'Pruebas del input'"
     [control]="getEnableInput()"
     [size]="'small'"
     [errorMessage]="''"
     [required]="true"
-  ></base-normal-input>
+  ></base-input>
+
+    <base-checkbox
+      [size]="'small'"
+      [position]="'column'"
+      [label]="'Checkbox en prueba'"
+      [disabled]="false"
+      [items]="['item1', 'item2', 'item3']"
+      [required]="false"
+      [control]="getEnableCheckbox()"
+      [errorMessage]="'Este campo es requerido.'"
+      (checked)="onCheckboxChecked($event)"
+  ></base-checkbox>
+
+  <base-dropdown
+    [size]="'small'"
+    [label]="'Dropdown en prueba'"
+    [disabled]="false"
+    [items]="dropdownItems"
+    [required]="false"
+    [control]="getEnableDropdown()"
+    [errorMessage]="'Este campo es requerido.'"
+  ></base-dropdown>
 </form>

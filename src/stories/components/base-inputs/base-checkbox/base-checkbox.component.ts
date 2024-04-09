@@ -4,14 +4,14 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
-  selector: 'base-normal-checkbox',
+  selector: 'base-checkbox',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
-  templateUrl: './base-normal-checkbox.component.html',
-  styleUrls: ['./base-normal-checkbox.component.scss'],
+  templateUrl: './base-checkbox.component.html',
+  styleUrls: ['./base-checkbox.component.scss'],
 })
 
-export class BaseNormalCheckboxComponent {
+export class BaseCheckboxComponent {
   @Input() public size: 'small' | 'medium' | 'large' = 'large';
   @Input() public position: 'row' | 'column' = 'column';
   @Input() public label= 'checkBox Input';
@@ -28,7 +28,6 @@ export class BaseNormalCheckboxComponent {
     let isChecked = event.target?.dispatchEvent
     if (isChecked) {
       this.checked.emit(item);
-      console.log(item)
     }
   }
 
@@ -38,9 +37,8 @@ export class BaseNormalCheckboxComponent {
   }
 
   public get checkboxBodyClasses(): string[] {
-    const positionClass = `--${this.position}--${this.size}`;
-    const sizeClass = `--${this.position}--${this.size}`;
-    return ['base-body-checkbox', `base-body-checkbox${positionClass}${sizeClass}`];
+    const positionClass = `--${this.position}`;
+    return ['base-body-checkbox', `base-body-checkbox${positionClass}`];
   }
 
   public get errorClasses(): string[] {

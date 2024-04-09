@@ -1,6 +1,6 @@
 @import '../../../../scss/variables/variables.scss';
 
-.base-input {
+.base-dropdown {
   border-radius: 15px;
   border: none;
   display: flex;
@@ -19,7 +19,7 @@
     max-width: 100%;
   }
 
-  .base-label-input {
+  .base-label-dropdown {
     display: flex;
     align-items: center;
 
@@ -36,7 +36,7 @@
     }
   }
 
-  input {
+  select {
     border-radius: 5px;
     color: $black-color;
     font-size: 16px;
@@ -44,8 +44,8 @@
     width: 100%;
     text-align: end;
 
-    &#error {
-      box-shadow: 0 5px 5px $danger-color;
+    &:hover {
+      background-color: red;
     }
     
     &.disabled {
@@ -55,10 +55,6 @@
       border: 2px solid $darkgrey-color;
       box-shadow: none;
       color: $black-color;
-
-      &::placeholder {
-        color: $white-color;
-      }
     }
 
     &.enabled {

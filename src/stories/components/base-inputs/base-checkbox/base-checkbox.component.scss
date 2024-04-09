@@ -1,0 +1,161 @@
+@import '../../../../scss/variables/variables.scss';
+
+.base-checkbox {
+  padding: 15px;
+  
+  &--small {
+    max-width: 25%;
+  }
+
+  &--medium {
+    max-width: 50%;
+  }
+
+  &--large {
+    max-width: 100%;
+  }
+
+  .base-label-checkbox {
+    label {
+      color: $black-color;
+      font-size: $font-size-custom;
+      font-weight: $font-weight-custom;
+      padding: 10px 0;
+      margin-right: 10px;
+    }
+
+    i {
+      color: $danger-color;
+    }
+  }
+
+  .base-body-checkbox {
+    align-items: baseline;
+    display: flex;
+    width: 100%;
+
+    &--row {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &--column {
+      flex-direction: column;
+    }
+
+    label {
+      color: $black-color;
+      font-size: $font-size-custom;
+      font-weight: $font-weight-custom;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .checkbox-items {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      input[type="checkbox"] {
+        border-radius: 5px;
+        font-size: $font-size-custom;
+        padding: 10px;
+        text-align: end;
+
+        &.disabled {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 10px;
+          height: 10px;
+          border: 2px solid $darkgrey-color;
+          pointer-events: none;
+          cursor: not-allowed;
+          background-color: $mediumgrey-color;
+          box-shadow: none;
+          color: $black-color;
+
+          &:checked {
+            outline: none;
+            border-color: $mediumgrey-color;
+            background-color: $darkgrey-color;
+            transition: border-color 0.3s ease;
+            box-shadow: 0 5px 5px $darkgrey-color;
+            color: $darkgrey-color;
+
+            &:after {
+              content: "";
+              display: block;
+              width: 8px;
+              height: 15px;
+              border: solid $mediumgrey-color;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+              position: relative;
+              top: -10px;
+              left: -3px;
+            }
+          }
+        }
+
+        &.enabled {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 10px;
+          height: 10px;
+          cursor: pointer;
+          border: 2px solid $primary-color;
+
+          &:checked {
+            outline: none;
+            border-color: $secondary-color;
+            background-color: $primary-color;
+            transition: border-color 0.3s ease;
+            box-shadow: 0 5px 5px $primary-color;
+            color: $primary-color;
+
+            &:after {
+              content: "";
+              display: block;
+              width: 8px;
+              height: 15px;
+              border: solid $secondary-color;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+              position: relative;
+              top: -10px;
+              left: -3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .error-message-checkbox {
+    border: 2px solid $danger-color;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    padding: 10px;
+    background-color: #FFCCCC;
+
+    &--small {
+      max-width: 25%;
+    }
+
+    &--medium {
+      max-width: 50%;
+    }
+
+    &--large {
+      max-width: 100%;
+    }
+
+    label {
+      color: $danger-color;
+      font-size: $font-size-small;
+      font-weight: $font-weight-custom;
+    }
+  }
+}

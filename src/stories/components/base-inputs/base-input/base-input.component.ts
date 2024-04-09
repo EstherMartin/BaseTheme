@@ -4,14 +4,14 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
-  selector: 'base-normal-input',
+  selector: 'base-input',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
-  templateUrl: './base-normal-input.component.html',
-  styleUrls: ['./base-normal-input.component.scss'],
+  templateUrl: './base-input.component.html',
+  styleUrls: ['./base-input.component.scss'],
 })
 
-export class BaseNormalInputComponent {
+export class BaseInputComponent {
   @Input() public size: 'small' | 'medium' | 'large' = 'large';
   @Input() public type = 'text';
   @Input() public label = 'Input';

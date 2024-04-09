@@ -3,9 +3,9 @@
     <label [for]="control"> {{label}} </label>
     <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
-  <div class="base-body-checkbox--column">
-    <div *ngFor="let item of items">
-      <input type="checkbox" (change)="onChange(item, $event)">
+  <div [ngClass]="checkboxBodyClasses">
+    <div class="checkbox-items" *ngFor="let item of items">
+      <input [ngClass]="isDisabled" type="checkbox" (change)="onChange(item, $event)">
       <label for="item"> {{ item }} </label>
     </div>
   </div>
