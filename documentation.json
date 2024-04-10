@@ -67,7 +67,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-a9b47ed2cb09ee11e2f76dff2187554501706cbb07bee87228cfb57b097e0f0e0c600310975eb7250ae7b2cf30d73b88add696312c8616fb5201294a0ca1131e",
+            "id": "component-AppComponent-5e116a305bfd6ba441681268d4c16af6517119c0031eb73c42ff879f0c0193297baaccac0501af06f6355ca25127b94c1290c3dd8d7e454309dce3cf92a7b1c7",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                     "type": "DropdownValueOptions[]",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 25,
                     "modifierKind": [
                         125
                     ]
@@ -104,7 +104,7 @@
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 23,
                     "modifierKind": [
                         125
                     ]
@@ -117,7 +117,7 @@
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 24,
                     "modifierKind": [
                         125
                     ]
@@ -130,7 +130,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 55,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -143,7 +143,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 56,
+                    "line": 69,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -156,7 +156,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 50,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -176,7 +176,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 59,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -223,16 +223,12 @@
                 {
                     "name": "BaseDropdownComponent",
                     "type": "component"
-                },
-                {
-                    "name": "NgSelectModule",
-                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormControl, FormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { BaseInputComponent } from '../stories/components/base-inputs/base-input/base-input.component';\r\nimport { BaseCheckboxComponent } from '../stories/components/base-inputs/base-checkbox/base-checkbox.component';\r\nimport { BaseDropdownComponent, DropdownValueOptions } from \"../stories/components/base-inputs/base-dropdown/base-dropdown.component\";\r\nimport { NgSelectModule } from '@ng-select/ng-select';\r\n\r\n@Component({\r\n    selector: 'app-root',\r\n    standalone: true,\r\n    templateUrl: './app.component.html',\r\n    styleUrl: './app.component.scss',\r\n    imports: [\r\n      RouterOutlet, \r\n      FormsModule, \r\n      ReactiveFormsModule, \r\n      BaseInputComponent, \r\n      BaseCheckboxComponent, \r\n      BaseDropdownComponent,\r\n      NgSelectModule\r\n    ]\r\n})\r\nexport class AppComponent {\r\n  public myForm: FormGroup;\r\n  public selectedItems: string[] = [];\r\n  public dropdownItems!: DropdownValueOptions[];\r\n\r\n  constructor() {\r\n    this.myForm = new FormGroup({\r\n      enableInput: new UntypedFormControl(),\r\n      enableCheckbox: new UntypedFormControl(),\r\n      enableDropdown: new UntypedFormControl(),\r\n    });\r\n  }\r\n\r\n  public getEnableInput(): UntypedFormControl {\r\n    console.log('Valor del input:', this.myForm.get('enableInput')?.value);\r\n    return this.myForm.get('enableInput') as FormControl;\r\n  }\r\n\r\n  public getEnableCheckbox(): UntypedFormControl {\r\n    return this.myForm.get('enableCheckbox') as FormControl;\r\n  }\r\n\r\n  public onCheckboxChecked(item: string) {\r\n    const index = this.selectedItems.indexOf(item);\r\n    if (index === -1) {\r\n      this.selectedItems.push(item);\r\n    } else {\r\n      this.selectedItems.splice(index, 1);\r\n    }\r\n    console.log('Items seleccionados:', this.selectedItems);\r\n  }\r\n\r\n  public getEnableDropdown(): UntypedFormControl {\r\n    console.log('Valor del dropdown:', this.myForm.get('enableDropdown')?.value);\r\n    return this.myForm.get('enableDropdown') as FormControl;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormControl, FormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { BaseInputComponent } from '../stories/components/base-inputs/base-input/base-input.component';\r\nimport { BaseCheckboxComponent } from '../stories/components/base-inputs/base-checkbox/base-checkbox.component';\r\nimport { BaseDropdownComponent, DropdownValueOptions } from \"../stories/components/base-inputs/base-dropdown/base-dropdown.component\";\r\n\r\n@Component({\r\n    selector: 'app-root',\r\n    standalone: true,\r\n    templateUrl: './app.component.html',\r\n    styleUrl: './app.component.scss',\r\n    imports: [\r\n      RouterOutlet, \r\n      FormsModule, \r\n      ReactiveFormsModule, \r\n      BaseInputComponent, \r\n      BaseCheckboxComponent, \r\n      BaseDropdownComponent,\r\n    ]\r\n})\r\nexport class AppComponent {\r\n  public myForm: FormGroup;\r\n  public selectedItems: string[] = [];\r\n  public dropdownItems!: DropdownValueOptions[];\r\n\r\n  constructor() {\r\n    this.myForm = new FormGroup({\r\n      enableInput: new UntypedFormControl(),\r\n      enableCheckbox: new UntypedFormControl(),\r\n      enableDropdown: new UntypedFormControl(),\r\n    });\r\n\r\n    this.dropdownItems = [\r\n      {\r\n        displayName: 'item 1',\r\n        value: 1,\r\n      },\r\n      {\r\n        displayName: 'item 2',\r\n        value: 2,\r\n      },\r\n      {\r\n        displayName: 'item 3',\r\n        value: 3,\r\n      },\r\n    ]\r\n  }\r\n\r\n  public getEnableInput(): UntypedFormControl {\r\n    console.log('Valor del input:', this.myForm.get('enableInput')?.value);\r\n    return this.myForm.get('enableInput') as FormControl;\r\n  }\r\n\r\n  public getEnableCheckbox(): UntypedFormControl {\r\n    return this.myForm.get('enableCheckbox') as FormControl;\r\n  }\r\n\r\n  public onCheckboxChecked(item: string) {\r\n    const index = this.selectedItems.indexOf(item);\r\n    if (index === -1) {\r\n      this.selectedItems.push(item);\r\n    } else {\r\n      this.selectedItems.splice(index, 1);\r\n    }\r\n    console.log('Items seleccionados:', this.selectedItems);\r\n  }\r\n\r\n  public getEnableDropdown(): UntypedFormControl {\r\n    console.log('Valor del dropdown:', this.myForm.get('enableDropdown')?.value);\r\n    return this.myForm.get('enableDropdown') as FormControl;\r\n  }\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -243,10 +239,116 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 27
+                "line": 25
             },
             "extends": [],
-            "templateData": "<form [formGroup]=\"myForm\">\r\n  <base-input\r\n    [label]=\"'Input en prueba'\"\r\n    [placeholder]=\"'Pruebas del input'\"\r\n    [control]=\"getEnableInput()\"\r\n    [size]=\"'small'\"\r\n    [errorMessage]=\"''\"\r\n    [required]=\"true\"\r\n  ></base-input>\r\n\r\n    <base-checkbox\r\n      [size]=\"'small'\"\r\n      [position]=\"'column'\"\r\n      [label]=\"'Checkbox en prueba'\"\r\n      [disabled]=\"false\"\r\n      [items]=\"['item1', 'item2', 'item3']\"\r\n      [required]=\"false\"\r\n      [control]=\"getEnableCheckbox()\"\r\n      [errorMessage]=\"'Este campo es requerido.'\"\r\n      (checked)=\"onCheckboxChecked($event)\"\r\n  ></base-checkbox>\r\n\r\n  <base-dropdown\r\n    [size]=\"'small'\"\r\n    [label]=\"'Dropdown en prueba'\"\r\n    [disabled]=\"false\"\r\n    [items]=\"dropdownItems\"\r\n    [required]=\"false\"\r\n    [control]=\"getEnableDropdown()\"\r\n    [errorMessage]=\"'Este campo es requerido.'\"\r\n  ></base-dropdown>\r\n</form>"
+            "templateData": "<form [formGroup]=\"myForm\">\r\n  <base-input\r\n    [label]=\"'Input en prueba'\"\r\n    [placeholder]=\"'Pruebas del input'\"\r\n    [control]=\"getEnableInput()\"\r\n    [size]=\"'small'\"\r\n    [errorMessage]=\"''\"\r\n    [required]=\"true\"\r\n  ></base-input>\r\n\r\n    <base-checkbox\r\n      [size]=\"'small'\"\r\n      [position]=\"'column'\"\r\n      [label]=\"'Checkbox en prueba'\"\r\n      [disabled]=\"false\"\r\n      [items]=\"['item1', 'item2', 'item3']\"\r\n      [required]=\"false\"\r\n      [control]=\"getEnableCheckbox()\"\r\n      [errorMessage]=\"'Este campo es requerido.'\"\r\n      (checked)=\"onCheckboxChecked($event)\"\r\n  ></base-checkbox>\r\n\r\n  <base-dropdown\r\n      [size]=\"'small'\"\r\n      [label]=\"'Dropdown en prueba'\"\r\n      [disabled]=\"false\"\r\n      [items]=\"dropdownItems\"\r\n      [required]=\"false\"\r\n      [control]=\"getEnableDropdown()\"\r\n      [errorMessage]=\"'Este campo es requerido.'\"\r\n  ></base-dropdown>\r\n</form>"
+        },
+        {
+            "name": "BaseAlertsComponent",
+            "id": "component-BaseAlertsComponent-1ad2dde16600fc7347a3feb87f07d1424284d4faf4ab76dd1c52e2f2cb2c87f7ab954cf8533c850474a8a8756024ce54248176a713290915c33ba0d25ee38211",
+            "file": "src/stories/components/base-alerts/base-alerts.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "base-alerts",
+            "styleUrls": [
+                "./base-alerts.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./base-alerts.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "defaultValue": "'Mensaje'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Titulo alerta'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'sucess'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"info\" | \"alert\" | \"error\" | \"sucess\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'base-alerts',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './base-alerts.component.html',\r\n  styleUrls: ['./base-alerts.component.scss'],\r\n})\r\nexport class BaseAlertsComponent {\r\n  @Input() type: 'info' | 'alert' | 'error' | 'sucess' = 'sucess';\r\n  @Input() disable = false;\r\n  @Input() title = 'Titulo alerta'\r\n  @Input() message = 'Mensaje';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.disable ? '--disable' : '--enable';\r\n    return ['base-alert', `base-alert--}`, mode];\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-alert {\r\n  border-radius: 15px;\r\n  font-size: $font-size-custom;\r\n  font-weight: $font-weight-custom;\r\n  margin: 20px;\r\n  max-width: fit-content;\r\n  min-width: 150px;\r\n  padding: 15px;\r\n  border: none;\r\n  color: $white-color;\r\n}",
+                    "styleUrl": "./base-alerts.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<div class=\"alert alert-success\" role=\"alert\">\r\n    <i class=\"fa fa-asterisk\"></i>\r\n    <p> Titulo </p>\r\n    <p> Mensaje </p>\r\n</div>\r\n<div class=\"alert alert-info\" role=\"alert\">...</div>\r\n<div class=\"alert alert-warning\" role=\"alert\">...</div>\r\n<div class=\"alert alert-danger\" role=\"alert\">...</div>"
         },
         {
             "name": "BaseButtonComponent",
@@ -716,7 +818,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-dropdown {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-dropdown {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px ;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  select {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &:hover {\r\n      background-color: red;\r\n    }\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n  \r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n  \r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n  \r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-dropdown {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-dropdown {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px ;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  select {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    option .options {\r\n      padding: 20px;\r\n    }\r\n\r\n    &:hover {\r\n      background-color: red;\r\n    }\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n  \r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n  \r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n  \r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./base-dropdown.component.scss"
                 }
             ],
@@ -769,7 +871,7 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <ng-select [items]=\"items\"\r\n             bindLabel=\"displayName\"\r\n             bindValue=\"value\"\r\n             [ngClass]=\"isDisabled\"\r\n             [formControl]=\"control\"\r\n             [required]=\"required\">\r\n  </ng-select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <select [ngClass]=\"isDisabled\" [formControl]=\"control\" [required]=\"required\">\r\n    <option class=\"options\" *ngFor=\"let item of items\" [value]=\"item.value\">\r\n      <p>{{item.displayName}}</p>\r\n    </option>\r\n  </select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
         },
         {
             "name": "BaseInputComponent",
@@ -1191,6 +1293,15 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/base-alerts/base-alerts.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BaseAlertsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

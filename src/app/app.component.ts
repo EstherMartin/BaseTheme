@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { BaseInputComponent } from '../stories/components/base-inputs/base-input/base-input.component';
 import { BaseCheckboxComponent } from '../stories/components/base-inputs/base-checkbox/base-checkbox.component';
 import { BaseDropdownComponent, DropdownValueOptions } from "../stories/components/base-inputs/base-dropdown/base-dropdown.component";
-import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
     selector: 'app-root',
@@ -18,7 +17,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
       BaseInputComponent, 
       BaseCheckboxComponent, 
       BaseDropdownComponent,
-      NgSelectModule
     ]
 })
 export class AppComponent {
@@ -32,6 +30,21 @@ export class AppComponent {
       enableCheckbox: new UntypedFormControl(),
       enableDropdown: new UntypedFormControl(),
     });
+
+    this.dropdownItems = [
+      {
+        displayName: 'item 1',
+        value: 1,
+      },
+      {
+        displayName: 'item 2',
+        value: 2,
+      },
+      {
+        displayName: 'item 3',
+        value: 3,
+      },
+    ]
   }
 
   public getEnableInput(): UntypedFormControl {
