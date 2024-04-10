@@ -3,13 +3,11 @@
     <label [for]="control"> {{label}} </label>
     <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
-  <ng-select [items]="items"
-             bindLabel="displayName"
-             bindValue="value"
-             [ngClass]="isDisabled"
-             [formControl]="control"
-             [required]="required">
-  </ng-select>
+  <select [ngClass]="isDisabled" [formControl]="control" [required]="required">
+    <option class="options" *ngFor="let item of items" [value]="item.value">
+      <p>{{item.displayName}}</p>
+    </option>
+  </select>
   <div *ngIf="hasErrorMessage" [ngClass]="errorClasses">
     <label [for]="control"> {{errorMessage}} </label>
   </div>

@@ -67,7 +67,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-1cf17968bc29528eb732d9945ca53ec2c30f7863a5ad7cb5e322d1844cee66183ae0970425bfdd4347113c247d90f04aae74c8f04e9ad9a5777e61107b05029b",
+            "id": "component-AppComponent-a9b47ed2cb09ee11e2f76dff2187554501706cbb07bee87228cfb57b097e0f0e0c600310975eb7250ae7b2cf30d73b88add696312c8616fb5201294a0ca1131e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                     "type": "DropdownValueOptions[]",
                     "optional": false,
                     "description": "",
-                    "line": 18,
+                    "line": 27,
                     "modifierKind": [
                         125
                     ]
@@ -104,7 +104,7 @@
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 25,
                     "modifierKind": [
                         125
                     ]
@@ -117,7 +117,7 @@
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 26,
                     "modifierKind": [
                         125
                     ]
@@ -130,7 +130,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -143,7 +143,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -156,7 +156,7 @@
                     "optional": false,
                     "returnType": "UntypedFormControl",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -176,7 +176,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -223,12 +223,16 @@
                 {
                     "name": "BaseDropdownComponent",
                     "type": "component"
+                },
+                {
+                    "name": "NgSelectModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormControl, FormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { BaseInputComponent } from '../stories/components/base-inputs/base-input/base-input.component';\r\nimport { BaseCheckboxComponent } from '../stories/components/base-inputs/base-checkbox/base-checkbox.component';\r\nimport { BaseDropdownComponent, DropdownValueOptions } from \"../stories/components/base-inputs/base-dropdown/base-dropdown.component\";\r\n\r\n@Component({\r\n    selector: 'app-root',\r\n    standalone: true,\r\n    templateUrl: './app.component.html',\r\n    styleUrl: './app.component.scss',\r\n    imports: [RouterOutlet, FormsModule, ReactiveFormsModule, BaseInputComponent, BaseCheckboxComponent, BaseDropdownComponent]\r\n})\r\nexport class AppComponent {\r\n  public myForm: FormGroup;\r\n  public selectedItems: string[] = [];\r\n  public dropdownItems!: DropdownValueOptions[];\r\n\r\n  constructor() {\r\n    this.myForm = new FormGroup({\r\n      enableInput: new UntypedFormControl(),\r\n      enableCheckbox: new UntypedFormControl(),\r\n      enableDropdown: new UntypedFormControl(),\r\n    });\r\n  }\r\n\r\n  public getEnableInput(): UntypedFormControl {\r\n    console.log('Valor del input:', this.myForm.get('enableInput')?.value);\r\n    return this.myForm.get('enableInput') as FormControl;\r\n  }\r\n\r\n  public getEnableCheckbox(): UntypedFormControl {\r\n    return this.myForm.get('enableCheckbox') as FormControl;\r\n  }\r\n\r\n  public onCheckboxChecked(item: string) {\r\n    const index = this.selectedItems.indexOf(item);\r\n    if (index === -1) {\r\n      this.selectedItems.push(item);\r\n    } else {\r\n      this.selectedItems.splice(index, 1);\r\n    }\r\n    console.log('Items seleccionados:', this.selectedItems);\r\n  }\r\n\r\n  public getEnableDropdown(): UntypedFormControl {\r\n    console.log('Valor del dropdown:', this.myForm.get('enableDropdown')?.value);\r\n    return this.myForm.get('enableDropdown') as FormControl;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormControl, FormGroup, FormsModule, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { BaseInputComponent } from '../stories/components/base-inputs/base-input/base-input.component';\r\nimport { BaseCheckboxComponent } from '../stories/components/base-inputs/base-checkbox/base-checkbox.component';\r\nimport { BaseDropdownComponent, DropdownValueOptions } from \"../stories/components/base-inputs/base-dropdown/base-dropdown.component\";\r\nimport { NgSelectModule } from '@ng-select/ng-select';\r\n\r\n@Component({\r\n    selector: 'app-root',\r\n    standalone: true,\r\n    templateUrl: './app.component.html',\r\n    styleUrl: './app.component.scss',\r\n    imports: [\r\n      RouterOutlet, \r\n      FormsModule, \r\n      ReactiveFormsModule, \r\n      BaseInputComponent, \r\n      BaseCheckboxComponent, \r\n      BaseDropdownComponent,\r\n      NgSelectModule\r\n    ]\r\n})\r\nexport class AppComponent {\r\n  public myForm: FormGroup;\r\n  public selectedItems: string[] = [];\r\n  public dropdownItems!: DropdownValueOptions[];\r\n\r\n  constructor() {\r\n    this.myForm = new FormGroup({\r\n      enableInput: new UntypedFormControl(),\r\n      enableCheckbox: new UntypedFormControl(),\r\n      enableDropdown: new UntypedFormControl(),\r\n    });\r\n  }\r\n\r\n  public getEnableInput(): UntypedFormControl {\r\n    console.log('Valor del input:', this.myForm.get('enableInput')?.value);\r\n    return this.myForm.get('enableInput') as FormControl;\r\n  }\r\n\r\n  public getEnableCheckbox(): UntypedFormControl {\r\n    return this.myForm.get('enableCheckbox') as FormControl;\r\n  }\r\n\r\n  public onCheckboxChecked(item: string) {\r\n    const index = this.selectedItems.indexOf(item);\r\n    if (index === -1) {\r\n      this.selectedItems.push(item);\r\n    } else {\r\n      this.selectedItems.splice(index, 1);\r\n    }\r\n    console.log('Items seleccionados:', this.selectedItems);\r\n  }\r\n\r\n  public getEnableDropdown(): UntypedFormControl {\r\n    console.log('Valor del dropdown:', this.myForm.get('enableDropdown')?.value);\r\n    return this.myForm.get('enableDropdown') as FormControl;\r\n  }\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -239,7 +243,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 18
+                "line": 27
             },
             "extends": [],
             "templateData": "<form [formGroup]=\"myForm\">\r\n  <base-input\r\n    [label]=\"'Input en prueba'\"\r\n    [placeholder]=\"'Pruebas del input'\"\r\n    [control]=\"getEnableInput()\"\r\n    [size]=\"'small'\"\r\n    [errorMessage]=\"''\"\r\n    [required]=\"true\"\r\n  ></base-input>\r\n\r\n    <base-checkbox\r\n      [size]=\"'small'\"\r\n      [position]=\"'column'\"\r\n      [label]=\"'Checkbox en prueba'\"\r\n      [disabled]=\"false\"\r\n      [items]=\"['item1', 'item2', 'item3']\"\r\n      [required]=\"false\"\r\n      [control]=\"getEnableCheckbox()\"\r\n      [errorMessage]=\"'Este campo es requerido.'\"\r\n      (checked)=\"onCheckboxChecked($event)\"\r\n  ></base-checkbox>\r\n\r\n  <base-dropdown\r\n    [size]=\"'small'\"\r\n    [label]=\"'Dropdown en prueba'\"\r\n    [disabled]=\"false\"\r\n    [items]=\"dropdownItems\"\r\n    [required]=\"false\"\r\n    [control]=\"getEnableDropdown()\"\r\n    [errorMessage]=\"'Este campo es requerido.'\"\r\n  ></base-dropdown>\r\n</form>"
@@ -765,7 +769,7 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <ng-select [items]=\"items\"\r\n             bindLabel=\"name\"\r\n             bindValue=\"value\"\r\n             [ngClass]=\"isDisabled\"\r\n             [formControl]=\"control\"\r\n             [required]=\"required\">\r\n  </ng-select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <ng-select [items]=\"items\"\r\n             bindLabel=\"displayName\"\r\n             bindValue=\"value\"\r\n             [ngClass]=\"isDisabled\"\r\n             [formControl]=\"control\"\r\n             [required]=\"required\">\r\n  </ng-select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
         },
         {
             "name": "BaseInputComponent",
