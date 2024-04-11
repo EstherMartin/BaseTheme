@@ -11,11 +11,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class BaseButtonComponent {
   @Input() type: 'submit' | 'button' = 'button';
   @Input() disable = false;
+  @Input() loading = false;
   @Input() label = 'Button';
   @Output() onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
     const mode = this.disable ? '--disable' : '--enable';
-    return ['base-button', `base-button--}`, mode];
+    const loading = this.loading? '--loading' : '';
+    return ['base-button', `base-button--}`, mode, loading];
+  }
+
+  public getLabel(): string {
+    return this.loading? '' : this.label;
   }
 }

@@ -1,6 +1,6 @@
 <button
     type="{{type}}"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes">
-    {{ label }}
+    [ngClass]="classes"
+    (click)="onClick.emit($event)">
+    {{ getLabel() }}
 </button>

@@ -1,0 +1,20 @@
+<div class="base-header">
+    <div>
+        <img [src]="getLogoPage" alt="Logo">
+        <h1>{{getCompanyName()}}</h1>
+    </div>
+    <div>
+        <div *ngIf="currentlyLoggedInUser">
+            <span class="welcome">
+                Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!
+            </span>
+            <base-button *ngIf="currentlyLoggedInUser" (onClick)="onLogout.emit($event)" label="Log out"></base-button>
+        </div>
+        <div *ngIf="!currentlyLoggedInUser">
+            <base-button *ngIf="!currentlyLoggedInUser" class="margin-left" (onClick)="onLogin.emit($event)"
+                label="Entrar"></base-button>
+            <base-button *ngIf="!currentlyLoggedInUser" class="margin-left" (onClick)="onCreateAccount.emit($event)"
+                label="Nuevo usuario"></base-button>
+        </div>
+    </div>
+</div>

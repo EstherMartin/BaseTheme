@@ -1,23 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { within, userEvent, expect } from '@storybook/test';
+import { BaseBodyComponent } from './base-body.component';
 
-import { PageComponent } from './page.component';
-
-const meta: Meta<PageComponent> = {
-  title: 'Base-Components/Page',
-  component: PageComponent,
+const meta: Meta<BaseBodyComponent> = {
+  title: 'Base-Components/Body',
+  component: BaseBodyComponent,
   parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
 };
 
 export default meta;
-type Story = StoryObj<PageComponent>;
+type Story = StoryObj<BaseBodyComponent>;
 
 export const LoggedOut: Story = {};
 
-// More on interaction testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const LoggedIn: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

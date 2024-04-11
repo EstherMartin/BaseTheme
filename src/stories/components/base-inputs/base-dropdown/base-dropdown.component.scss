@@ -28,7 +28,7 @@
       font-size: $font-size-custom;
       font-weight: $font-weight-custom;
       padding: 10px 0;
-      margin-right: 10px ;
+      margin-right: 10px;
     }
 
     i {
@@ -44,14 +44,19 @@
     width: 100%;
     text-align: end;
 
-    option .options {
-      padding: 20px;
+    option {
+      background-color: pink;
+    }
+    &:hover {
+      background-color: $primary-color;
     }
 
-    &:hover {
-      background-color: red;
+    &:focus {
+      outline: none;
+      border-color: $secondary-color;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
     }
-    
+
     &.disabled {
       pointer-events: none;
       cursor: not-allowed;
@@ -69,7 +74,7 @@
       &::placeholder {
         color: $darkgrey-color;
       }
-      
+
       &.required {
         background-color: red;
       }
@@ -83,6 +88,10 @@
     }
   }
 
+  option {
+    padding: 100px;
+  }
+
   .error-message-input {
     border: 2px solid $danger-color;
     border-radius: 5px;
@@ -92,15 +101,15 @@
     &--small {
       max-width: 25%;
     }
-  
+
     &--medium {
       max-width: 50%;
     }
-  
+
     &--large {
       max-width: 100%;
     }
-  
+
     label {
       color: $danger-color;
       font-size: $font-size-small;

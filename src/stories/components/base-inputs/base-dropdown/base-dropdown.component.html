@@ -4,8 +4,8 @@
     <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
   <select [ngClass]="isDisabled" [formControl]="control" [required]="required">
-    <option class="options" *ngFor="let item of items" [value]="item.value">
-      <p>{{item.displayName}}</p>
+    <option *ngFor="let item of items" [value]="item.value">
+      {{item.displayName}}
     </option>
   </select>
   <div *ngIf="hasErrorMessage" [ngClass]="errorClasses">
