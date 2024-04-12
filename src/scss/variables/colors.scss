@@ -1,10 +1,10 @@
 //Blue Gamma
-$darkblue-color: #2471A3;
-$mediumblue-color: #3498db;
+$darkblue-color: #0081dd;
+$mediumblue-color: #0eaee1;
+$pastelblue-color: #1ee7e1;
 
-//Violet Gamma
-$darkoviolet-color: #76448A;
-$mediumviolet-color: #AF7AC5;
+//Pink Gamma
+$pink-color: #f7005a;
 
 //Green Gamma
 $darkgreen-color: #148F77;
@@ -12,7 +12,7 @@ $mediumgreen-color: #17A589;
 
 //Grey Gamma
 $white-color: #ffffff;
-$mediumgrey-color: #B3B6B7;
+$mediumgrey-color: #f9fbfa9c;
 $darkgrey-color: #7B7D7D;
 $black-color: #000000;
 
@@ -25,6 +25,7 @@ $notification-color: #85C1E9;
 $background-danger-color: #FFCCCC;
 
 //PrimaryColors
-$primary-color:  $darkblue-color;
+$primary-color: $darkblue-color;
 $secondary-color: $mediumblue-color;
-$linear-gradient: linear-gradient(to right, #2471A3, #3498db);
+$terciary-color: $pink-color;
+$linear-gradient: linear-gradient(to right, $primary-color, $terciary-color);

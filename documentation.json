@@ -296,7 +296,7 @@
         {
             "name": "BaseButtonComponent",
             "id": "component-BaseButtonComponent-410995316b062b7e20ca18b05da0bb2a9940e083380e70a615d634a1fdb296b01b76618d5ca5280abb399c198e3028910ad78ae5abe395db91209bd28201c767",
-            "file": "src/stories/components/base-button/base-button.component.ts",
+            "file": "src/stories/components/base-buttons/base-button/base-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -394,7 +394,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-button {\r\n  border-radius: 15px;\r\n  font-size: $font-size-custom;\r\n  font-weight: $font-weight-custom;\r\n  margin: 20px;\r\n  max-width: fit-content;\r\n  min-width: 150px;\r\n  min-height: 54px;\r\n  padding: 15px;\r\n  border: none;\r\n  color: $white-color;\r\n\r\n  &.--enable {\r\n    background-color: $primary-color;\r\n    cursor: pointer;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n\r\n    &:hover {\r\n      background-color: $secondary-color;\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 5px 5px $darkgrey-color;\r\n    }\r\n  \r\n    &:active {\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 2px 2px $darkgrey-color;\r\n    }\r\n\r\n   &.--loading {\r\n      background-color: $secondary-color;\r\n      pointer-events: none;\r\n\r\n      &.--loading:before {\r\n        border: 2px solid $white-color;\r\n        border-top-color: $alert-color;\r\n      }\r\n  \r\n      &:before {\r\n        content: '';\r\n        box-sizing: border-box;\r\n        position: absolute;\r\n        top: 50%;\r\n        left: 50%;\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-top: -10px;\r\n        margin-left: -10px;\r\n        border-radius: 50%;\r\n        border: 2px solid $white-color;\r\n        border-top-color: $primary-color;\r\n        animation: spin 1s linear infinite;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--disable {\r\n    pointer-events: none;\r\n    background-color: $darkgrey-color;  \r\n    cursor: none;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n  }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}",
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-button {\r\n  border-radius: 15px;\r\n  font-size: $font-size-custom;\r\n  font-weight: $font-weight-custom;\r\n  margin: 20px;\r\n  max-width: fit-content;\r\n  min-width: 150px;\r\n  min-height: 54px;\r\n  padding: 15px;\r\n  border: none;\r\n  color: $white-color;\r\n\r\n  &.--enable {\r\n    background-color: $primary-color;\r\n    cursor: pointer;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 5px 5px $darkgrey-color;\r\n    background-size: 300% 100%;\r\n    transition: transform 1s, box-shadow 0.3s;\r\n\r\n    &:hover {\r\n      animation: destello 1s forwards;\r\n      background-image: linear-gradient(to right, $primary-color, $terciary-color);\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 5px 5px $darkgrey-color;\r\n    }\r\n  \r\n    &:active {\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 2px 2px $darkgrey-color;\r\n    }\r\n\r\n   &.--loading {\r\n      background-color: $secondary-color;\r\n      pointer-events: none;\r\n\r\n      &.--loading:before {\r\n        border: 2px solid $white-color;\r\n        border-top-color: $terciary-color;\r\n      }\r\n  \r\n      &:before {\r\n        content: '';\r\n        box-sizing: border-box;\r\n        position: absolute;\r\n        top: 50%;\r\n        left: 50%;\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-top: -10px;\r\n        margin-left: -10px;\r\n        border-radius: 50%;\r\n        border: 2px solid $white-color;\r\n        border-top-color: $primary-color;\r\n        animation: spin 1s linear infinite;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--disable {\r\n    pointer-events: none;\r\n    background-color: $darkgrey-color;  \r\n    cursor: none;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n  }\r\n}",
                     "styleUrl": "./base-button.component.scss"
                 }
             ],
@@ -597,7 +597,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-checkbox {\r\n  padding: 15px;\r\n  \r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-checkbox {\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  .base-body-checkbox {\r\n    align-items: baseline;\r\n    display: flex;\r\n    width: 100%;\r\n\r\n    &--row {\r\n      flex-direction: row;\r\n      justify-content: space-around;\r\n    }\r\n\r\n    &--column {\r\n      flex-direction: column;\r\n    }\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    .checkbox-items {\r\n      display: flex;\r\n      justify-content: space-evenly;\r\n      align-items: center;\r\n\r\n      input[type=\"checkbox\"] {\r\n        border-radius: 5px;\r\n        font-size: $font-size-custom;\r\n        padding: 10px;\r\n        text-align: end;\r\n\r\n        &.disabled {\r\n          -webkit-appearance: none;\r\n          -moz-appearance: none;\r\n          appearance: none;\r\n          width: 10px;\r\n          height: 10px;\r\n          border: 2px solid $darkgrey-color;\r\n          pointer-events: none;\r\n          cursor: not-allowed;\r\n          background-color: $mediumgrey-color;\r\n          box-shadow: none;\r\n          color: $black-color;\r\n\r\n          &:checked {\r\n            outline: none;\r\n            border-color: $mediumgrey-color;\r\n            background-color: $darkgrey-color;\r\n            transition: border-color 0.3s ease;\r\n            box-shadow: 0 5px 5px $darkgrey-color;\r\n            color: $darkgrey-color;\r\n\r\n            &:after {\r\n              content: \"\";\r\n              display: block;\r\n              width: 8px;\r\n              height: 15px;\r\n              border: solid $mediumgrey-color;\r\n              border-width: 0 2px 2px 0;\r\n              transform: rotate(45deg);\r\n              position: relative;\r\n              top: -10px;\r\n              left: -3px;\r\n            }\r\n          }\r\n        }\r\n\r\n        &.enabled {\r\n          -webkit-appearance: none;\r\n          -moz-appearance: none;\r\n          appearance: none;\r\n          width: 10px;\r\n          height: 10px;\r\n          cursor: pointer;\r\n          border: 2px solid $primary-color;\r\n\r\n          &:checked {\r\n            outline: none;\r\n            border-color: $secondary-color;\r\n            background-color: $primary-color;\r\n            transition: border-color 0.3s ease;\r\n            box-shadow: 0 5px 5px $primary-color;\r\n            color: $primary-color;\r\n\r\n            &:after {\r\n              content: \"\";\r\n              display: block;\r\n              width: 8px;\r\n              height: 15px;\r\n              border: solid $secondary-color;\r\n              border-width: 0 2px 2px 0;\r\n              transform: rotate(45deg);\r\n              position: relative;\r\n              top: -10px;\r\n              left: -3px;\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-checkbox {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    margin: 10px 0 0;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n\r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n\r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n\r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-checkbox {\r\n  padding: 15px;\r\n  \r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-checkbox {\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  .base-body-checkbox {\r\n    align-items: baseline;\r\n    display: flex;\r\n    width: 100%;\r\n\r\n    &--row {\r\n      flex-direction: row;\r\n      justify-content: space-around;\r\n    }\r\n\r\n    &--column {\r\n      flex-direction: column;\r\n    }\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    .checkbox-items {\r\n      display: flex;\r\n      justify-content: space-evenly;\r\n      align-items: center;\r\n\r\n      input[type=\"checkbox\"] {\r\n        border-radius: 5px;\r\n        font-size: $font-size-custom;\r\n        padding: 10px;\r\n        text-align: end;\r\n\r\n        &.disabled {\r\n          -webkit-appearance: none;\r\n          -moz-appearance: none;\r\n          appearance: none;\r\n          width: 10px;\r\n          height: 10px;\r\n          border: 2px solid $black-color;\r\n          pointer-events: none;\r\n          cursor: not-allowed;\r\n          background-color: $darkgrey-color;\r\n          box-shadow: none;\r\n          color: $black-color;\r\n\r\n          &:checked {\r\n            outline: none;\r\n            border-color: $mediumgrey-color;\r\n            background-color: $darkgrey-color;\r\n            transition: border-color 0.3s ease;\r\n            box-shadow: 0 5px 5px $darkgrey-color;\r\n            color: $darkgrey-color;\r\n\r\n            &:after {\r\n              content: \"\";\r\n              display: block;\r\n              width: 8px;\r\n              height: 15px;\r\n              border: solid $mediumgrey-color;\r\n              border-width: 0 2px 2px 0;\r\n              transform: rotate(45deg);\r\n              position: relative;\r\n              top: -10px;\r\n              left: -3px;\r\n            }\r\n          }\r\n        }\r\n\r\n        &.enabled {\r\n          -webkit-appearance: none;\r\n          -moz-appearance: none;\r\n          appearance: none;\r\n          width: 10px;\r\n          height: 10px;\r\n          cursor: pointer;\r\n          border: 2px solid $primary-color;\r\n\r\n          &:checked {\r\n            outline: none;\r\n            border-color: $secondary-color;\r\n            background-color: $primary-color;\r\n            transition: border-color 0.3s ease;\r\n            box-shadow: 0 5px 5px $primary-color;\r\n            color: $primary-color;\r\n\r\n            &:after {\r\n              content: \"\";\r\n              display: block;\r\n              width: 8px;\r\n              height: 15px;\r\n              border: solid $secondary-color;\r\n              border-width: 0 2px 2px 0;\r\n              transform: rotate(45deg);\r\n              position: relative;\r\n              top: -10px;\r\n              left: -3px;\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-checkbox {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    margin: 10px 0 0;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n\r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n\r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n\r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./base-checkbox.component.scss"
                 }
             ],
@@ -660,6 +660,121 @@
                 }
             },
             "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-checkbox\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <div [ngClass]=\"checkboxBodyClasses\">\r\n    <div class=\"checkbox-items\" *ngFor=\"let item of items\">\r\n      <input [ngClass]=\"isDisabled\" type=\"checkbox\" (change)=\"onChange(item, $event)\">\r\n      <label for=\"item\"> {{ item }} </label>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "BaseDropdownButtonComponent",
+            "id": "component-BaseDropdownButtonComponent-554fffb48a9549f0919b99bd96680aa32feb68cb7015a562a0571f6d5fa6b35f12c9d9362e6d68829128d6f57a6acb361b1a486be97a473bcce713ff9ace9d75",
+            "file": "src/stories/components/base-buttons/base-dropdown-button/base-dropdown-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "base-dropdown-button",
+            "styleUrls": [
+                "./base-dropdown-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./base-dropdown-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "\"submit\" | \"button\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getLabel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'base-dropdown-button',\r\n    templateUrl: './base-dropdown-button.component.html',\r\n    styleUrls: ['./base-dropdown-button.component.scss'],\r\n})\r\nexport class BaseDropdownButtonComponent {\r\n  @Input() type: 'submit' | 'button' = 'button';\r\n  @Input() disable = false;\r\n  @Input() loading = false;\r\n  @Input() label = 'Button';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.disable ? '--disable' : '--enable';\r\n    const loading = this.loading? '--loading' : '';\r\n    return ['base-button', `base-button--}`, mode, loading];\r\n  }\r\n\r\n  public getLabel(): string {\r\n    return this.loading? '' : this.label;\r\n  }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-button {\r\n  border-radius: 15px;\r\n  font-size: $font-size-custom;\r\n  font-weight: $font-weight-custom;\r\n  margin: 20px;\r\n  max-width: fit-content;\r\n  min-width: 150px;\r\n  min-height: 54px;\r\n  padding: 15px;\r\n  border: none;\r\n  color: $white-color;\r\n\r\n  &.--enable {\r\n    background-color: $primary-color;\r\n    cursor: pointer;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n\r\n    &:hover {\r\n      background-color: $secondary-color;\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 5px 5px $darkgrey-color;\r\n    }\r\n  \r\n    &:active {\r\n      transform: translateY(-2px);\r\n      box-shadow: 0 2px 2px $darkgrey-color;\r\n    }\r\n\r\n   &.--loading {\r\n      background-color: $secondary-color;\r\n      pointer-events: none;\r\n\r\n      &.--loading:before {\r\n        border: 2px solid $white-color;\r\n        border-top-color: $terciary-color;\r\n      }\r\n  \r\n      &:before {\r\n        content: '';\r\n        box-sizing: border-box;\r\n        position: absolute;\r\n        top: 50%;\r\n        left: 50%;\r\n        width: 20px;\r\n        height: 20px;\r\n        margin-top: -10px;\r\n        margin-left: -10px;\r\n        border-radius: 50%;\r\n        border: 2px solid $white-color;\r\n        border-top-color: $primary-color;\r\n        animation: spin 1s linear infinite;\r\n      }\r\n    }\r\n  }\r\n\r\n  &.--disable {\r\n    pointer-events: none;\r\n    background-color: $darkgrey-color;  \r\n    cursor: none;\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 2px 2px $darkgrey-color;\r\n  }\r\n}\r\n\r\n@keyframes spin {\r\n  0% { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}",
+                    "styleUrl": "./base-dropdown-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 15
+                    }
+                }
+            },
+            "templateData": "<div class=\"btn-group\">\r\n  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n    Action\r\n  </button>\r\n  <ul class=\"dropdown-menu\">\r\n    <li><a href=\"#\">Action</a></li>\r\n    <li><a href=\"#\">Another action</a></li>\r\n    <li><a href=\"#\">Something else here</a></li>\r\n    <li role=\"separator\" class=\"divider\"></li>\r\n    <li><a href=\"#\">Separated link</a></li>\r\n  </ul>\r\n</div>"
         },
         {
             "name": "BaseDropdownComponent",
@@ -780,7 +895,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-dropdown {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-dropdown {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  select {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    option {\r\n      background-color: pink;\r\n    }\r\n    &:hover {\r\n      background-color: $primary-color;\r\n    }\r\n\r\n    &:focus {\r\n      outline: none;\r\n      border-color: $secondary-color;\r\n      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);\r\n    }\r\n\r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n\r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  option {\r\n    padding: 100px;\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n\r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n\r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n\r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-dropdown {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-dropdown {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  select {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: end;\r\n\r\n    &:focus {\r\n      outline: none;\r\n      border-color: $secondary-color;\r\n      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);\r\n    }\r\n\r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $darkgrey-color;\r\n      border: 2px solid $black-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n\r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n\r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n\r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n\r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./base-dropdown.component.scss"
                 }
             ],
@@ -837,7 +952,7 @@
         },
         {
             "name": "BaseHeaderComponent",
-            "id": "component-BaseHeaderComponent-362ed1147dce35486098c9b745aced0989b79293131bedbadcc133ad6c32cc4f27105eb33050c8ca92777b9b6965ff135c49415cbdf1a2c00e8f6cfb00206876",
+            "id": "component-BaseHeaderComponent-d1722beb542c9ea52d44b7e8e5abed792bb219165df1183559c3dfb7aab8a6146b74a0cfd12db4e167e4529412fe69a7195f839e2cd279c331095be9223baef3",
             "file": "src/stories/components/base-header/base-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -859,7 +974,7 @@
                     "name": "currentlyLoggedInUser",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "CurrentlyLoggedInUser",
                     "decorators": []
                 },
@@ -868,7 +983,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 }
@@ -879,7 +994,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "EventEmitter"
                 },
                 {
@@ -887,7 +1002,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "EventEmitter"
                 },
                 {
@@ -895,7 +1010,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 }
             ],
@@ -907,7 +1022,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -920,7 +1035,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -941,22 +1056,26 @@
                 {
                     "name": "BaseButtonComponent",
                     "type": "component"
+                },
+                {
+                    "name": "BaseLinearGradientComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseButtonComponent } from '../base-button/base-button.component';\r\nimport type { CurrentlyLoggedInUser } from '../../CurrentlyLoggedInUser';\r\n\r\n@Component({\r\n  selector: 'base-header',\r\n  standalone: true,\r\n  imports: [CommonModule, BaseButtonComponent],\r\n  templateUrl: './base-header.component.html',\r\n  styleUrls: ['./base-header.component.scss'],\r\n})\r\nexport class BaseHeaderComponent {\r\n  @Input() public currentlyLoggedInUser!: CurrentlyLoggedInUser;\r\n  @Input() public logoPage = '';\r\n  @Output() public onLogin = new EventEmitter<Event>();\r\n  @Output() public onLogout = new EventEmitter<Event>();\r\n  @Output() public onCreateAccount = new EventEmitter<Event>();\r\n\r\n  public getLogoPage(): string {\r\n    return '/assets/mock1.jpeg'\r\n  }\r\n\r\n  public getCompanyName(): string {\r\n    return 'Compañia de pruebas'\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseButtonComponent } from '../base-buttons/base-button/base-button.component';\r\nimport type { CurrentlyLoggedInUser } from '../../CurrentlyLoggedInUser';\r\nimport { BaseLinearGradientComponent } from '../base-linear-gradient/base-linear-gradient.component';\r\n\r\n@Component({\r\n  selector: 'base-header',\r\n  standalone: true,\r\n  imports: [CommonModule, BaseButtonComponent, BaseLinearGradientComponent],\r\n  templateUrl: './base-header.component.html',\r\n  styleUrls: ['./base-header.component.scss'],\r\n})\r\nexport class BaseHeaderComponent {\r\n  @Input() public currentlyLoggedInUser!: CurrentlyLoggedInUser;\r\n  @Input() public logoPage = '';\r\n  @Output() public onLogin = new EventEmitter<Event>();\r\n  @Output() public onLogout = new EventEmitter<Event>();\r\n  @Output() public onCreateAccount = new EventEmitter<Event>();\r\n\r\n  public getLogoPage(): string {\r\n    return \"../../../assets/mock1.jpeg\";\r\n  }\r\n\r\n  public getCompanyName(): string {\r\n    return 'MockTech'\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".base-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.base-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.base-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.base-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.base-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-header {\r\n  align-items: center;\r\n  background-color: $mediumgrey-color;\r\n  border-bottom: 10px solid linear-gradient(to right, $primary-color, $terciary-color);\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 0 5%;\r\n\r\n  .company-info {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    img {\r\n      width: 100px;\r\n    }\r\n\r\n    h1 {\r\n      margin: 6px 0 6px 10px;\r\n      background: linear-gradient(to bottom, $primary-color, $terciary-color);\r\n      -webkit-background-clip: text;\r\n      -webkit-text-fill-color: transparent;\r\n      text-shadow: 1px 3px 0px rgb(1 1 1 / 21%);\r\n    }\r\n  }\r\n\r\n  .user-info {\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n}",
                     "styleUrl": "./base-header.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"base-header\">\r\n    <div>\r\n        <img [src]=\"getLogoPage\" alt=\"Logo\">\r\n        <h1>{{getCompanyName()}}</h1>\r\n    </div>\r\n    <div>\r\n        <div *ngIf=\"currentlyLoggedInUser\">\r\n            <span class=\"welcome\">\r\n                Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!\r\n            </span>\r\n            <base-button *ngIf=\"currentlyLoggedInUser\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></base-button>\r\n        </div>\r\n        <div *ngIf=\"!currentlyLoggedInUser\">\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" class=\"margin-left\" (onClick)=\"onLogin.emit($event)\"\r\n                label=\"Entrar\"></base-button>\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" class=\"margin-left\" (onClick)=\"onCreateAccount.emit($event)\"\r\n                label=\"Nuevo usuario\"></base-button>\r\n        </div>\r\n    </div>\r\n</div>"
+            "templateData": "<div class=\"base-header\">\r\n    <div class=\"company-info\">\r\n        <img src=\"../../../assets/mock1.jpeg\" [alt]=\"getCompanyName()\">\r\n        <h1>{{getCompanyName()}}</h1>\r\n    </div>\r\n    <div class=\"user-info\">\r\n        <div *ngIf=\"currentlyLoggedInUser\">\r\n            <span class=\"welcome\">\r\n                Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!\r\n            </span>\r\n            <base-button *ngIf=\"currentlyLoggedInUser\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></base-button>\r\n        </div>\r\n        <div *ngIf=\"!currentlyLoggedInUser\">\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onLogin.emit($event)\"\r\n                label=\"Entrar\">\r\n            </base-button>\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onCreateAccount.emit($event)\"\r\n                label=\"Nuevo usuario\">\r\n            </base-button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<base-lineal-gradient></base-lineal-gradient>"
         },
         {
             "name": "BaseInputComponent",
@@ -1086,7 +1205,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-input {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px ;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 8px;\r\n    width: 100%;\r\n    text-align: end;\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $mediumgrey-color;\r\n      border: 2px solid $darkgrey-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n\r\n      &::placeholder {\r\n        color: $white-color;\r\n      }\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n  \r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n  \r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n  \r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
+                    "data": "@import '../../../../scss/variables/variables.scss';\r\n\r\n.base-input {\r\n  border-radius: 15px;\r\n  border: none;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n\r\n  &--small {\r\n    max-width: 25%;\r\n  }\r\n\r\n  &--medium {\r\n    max-width: 50%;\r\n  }\r\n\r\n  &--large {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .base-label-input {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    label {\r\n      color: $black-color;\r\n      font-size: $font-size-custom;\r\n      font-weight: $font-weight-custom;\r\n      padding: 10px 0;\r\n      margin-right: 10px ;\r\n    }\r\n\r\n    i {\r\n      color: $danger-color;\r\n    }\r\n  }\r\n\r\n  input {\r\n    border-radius: 5px;\r\n    color: $black-color;\r\n    font-size: 16px;\r\n    padding: 8px;\r\n    width: 100%;\r\n    text-align: end;\r\n    \r\n    &.disabled {\r\n      pointer-events: none;\r\n      cursor: not-allowed;\r\n      background-color: $darkgrey-color;\r\n      border: 2px solid $black-color;\r\n      box-shadow: none;\r\n      color: $black-color;\r\n\r\n      &::placeholder {\r\n        color: $white-color;\r\n      }\r\n    }\r\n\r\n    &.enabled {\r\n      border: 2px solid $primary-color;\r\n      background-color: $white-color;\r\n      cursor: pointer;\r\n\r\n      &::placeholder {\r\n        color: $darkgrey-color;\r\n      }\r\n      \r\n      &.required {\r\n        background-color: red;\r\n      }\r\n\r\n      &:focus {\r\n        outline: none;\r\n        border-color: $secondary-color;\r\n        transition: border-color 0.3s ease;\r\n        box-shadow: 0 5px 5px $darkgrey-color;\r\n      }\r\n    }\r\n  }\r\n\r\n  .error-message-input {\r\n    border: 2px solid $danger-color;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    background-color: #FFCCCC;\r\n\r\n    &--small {\r\n      max-width: 25%;\r\n    }\r\n  \r\n    &--medium {\r\n      max-width: 50%;\r\n    }\r\n  \r\n    &--large {\r\n      max-width: 100%;\r\n    }\r\n  \r\n    label {\r\n      color: $danger-color;\r\n      font-size: $font-size-small;\r\n      font-weight: $font-weight-custom;\r\n    }\r\n  }\r\n}",
                     "styleUrl": "./base-input.component.scss"
                 }
             ],
@@ -1140,9 +1259,107 @@
                 }
             },
             "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-input\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <input [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"control\"\r\n    [required]=\"required\">\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "BaseLinearGradientComponent",
+            "id": "component-BaseLinearGradientComponent-dc967c0474a4d161f0251a6134d080a1bda63e8471a68c1638bcf24955a3bd9696ede3311f04a6be49459512db8591bb9f711d71d39008232febc181bede99e2",
+            "file": "src/stories/components/base-linear-gradient/base-linear-gradient.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "base-lineal-gradient",
+            "styleUrls": [
+                "./base-linear-gradient.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./base-linear-gradient.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'base-lineal-gradient',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './base-linear-gradient.component.html',\r\n  styleUrls: ['./base-linear-gradient.component.scss'],\r\n})\r\nexport class BaseLinearGradientComponent {\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '/src/scss/variables/variables.scss';\r\n\r\n.base-linear-gradient {\r\n  background: $linear-gradient;\r\n  height: 5px;\r\n  position: relative;\r\n  margin: 0;\r\n}",
+                    "styleUrl": "./base-linear-gradient.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"base-linear-gradient\"></div>"
         }
     ],
-    "modules": [],
+    "modules": [
+        {
+            "name": "BaseDropdownButtonModule",
+            "id": "module-BaseDropdownButtonModule-45b0f671d94f4a579fe9f17426ceb538985fb6def74baf205babce3e9f0486bc88b1360bf8e8a4171b2b278909a41aab401c9b4c480a87c1379e0bf99ec4d736",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/stories/components/base-buttons/base-dropdown-button/base-dropdown-button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseLinearGradientComponent } from '../../base-linear-gradient/base-linear-gradient.component';\r\nimport { BaseDropdownButtonComponent } from './base-dropdown-button.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BaseDropdownButtonComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule, \r\n    BaseLinearGradientComponent\r\n  ],\r\n  exports: [\r\n    BaseDropdownButtonComponent,\r\n  ]\r\n})\r\nexport class BaseDropdownButtonModule { }",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BaseDropdownButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "BaseLinearGradientComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BaseDropdownButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
     "miscellaneous": {
         "variables": [
             {
@@ -1220,10 +1437,19 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/components/base-button/base-button.component.ts",
+                "filePath": "src/stories/components/base-buttons/base-button/base-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BaseButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/base-buttons/base-dropdown-button/base-dropdown-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BaseDropdownButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
                 "status": "low"
@@ -1271,6 +1497,15 @@
                 "name": "BaseInputComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/base-linear-gradient/base-linear-gradient.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BaseLinearGradientComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]

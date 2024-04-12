@@ -47,8 +47,8 @@
     &.disabled {
       pointer-events: none;
       cursor: not-allowed;
-      background-color: $mediumgrey-color;
-      border: 2px solid $darkgrey-color;
+      background-color: $darkgrey-color;
+      border: 2px solid $black-color;
       box-shadow: none;
       color: $black-color;
 

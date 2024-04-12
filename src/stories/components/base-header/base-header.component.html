@@ -1,9 +1,9 @@
 <div class="base-header">
-    <div>
-        <img [src]="getLogoPage" alt="Logo">
+    <div class="company-info">
+        <img src="../../../assets/mock1.jpeg" [alt]="getCompanyName()">
         <h1>{{getCompanyName()}}</h1>
     </div>
-    <div>
+    <div class="user-info">
         <div *ngIf="currentlyLoggedInUser">
             <span class="welcome">
                 Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!
@@ -11,10 +11,13 @@
             <base-button *ngIf="currentlyLoggedInUser" (onClick)="onLogout.emit($event)" label="Log out"></base-button>
         </div>
         <div *ngIf="!currentlyLoggedInUser">
-            <base-button *ngIf="!currentlyLoggedInUser" class="margin-left" (onClick)="onLogin.emit($event)"
-                label="Entrar"></base-button>
-            <base-button *ngIf="!currentlyLoggedInUser" class="margin-left" (onClick)="onCreateAccount.emit($event)"
-                label="Nuevo usuario"></base-button>
+            <base-button *ngIf="!currentlyLoggedInUser" (onClick)="onLogin.emit($event)"
+                label="Entrar">
+            </base-button>
+            <base-button *ngIf="!currentlyLoggedInUser" (onClick)="onCreateAccount.emit($event)"
+                label="Nuevo usuario">
+            </base-button>
         </div>
     </div>
 </div>
+<base-lineal-gradient></base-lineal-gradient>

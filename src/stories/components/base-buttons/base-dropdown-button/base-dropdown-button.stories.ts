@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { BaseButtonComponent } from './base-button.component';
+import { BaseDropdownButtonComponent } from './base-dropdown-button.component';
 
-const meta: Meta<BaseButtonComponent> = {
-  title: 'Base-Components/Button',
-  component: BaseButtonComponent,
+const meta: Meta<BaseDropdownButtonComponent> = {
+  title: 'Base-Components/Buttons/Dropdown_Button',
+  component: BaseDropdownButtonComponent,
   tags: ['autodocs'],
   args: { onClick: fn() },
 };
 
 export default meta;
-type Story = StoryObj<BaseButtonComponent>;
+type Story = StoryObj<BaseDropdownButtonComponent>;
 
 export const Enable: Story = {
   args: {

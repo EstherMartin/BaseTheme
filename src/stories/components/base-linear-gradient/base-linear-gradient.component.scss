@@ -1,0 +1,8 @@
+@import '/src/scss/variables/variables.scss';
+
+.base-linear-gradient {
+  background: $linear-gradient;
+  height: 5px;
+  position: relative;
+  margin: 0;
+}

@@ -1,32 +1,32 @@
+@import '/src/scss/variables/variables.scss';
+
 .base-header {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
   align-items: center;
+  background-color: $mediumgrey-color;
+  border-bottom: 10px solid linear-gradient(to right, $primary-color, $terciary-color);
+  display: flex;
   justify-content: space-between;
-}
+  padding: 0 5%;
 
-.base-header svg {
-  display: inline-block;
-  vertical-align: top;
-}
+  .company-info {
+    display: flex;
+    align-items: center;
 
-.base-header h1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
-}
+    img {
+      width: 100px;
+    }
 
-.base-header button + button {
-  margin-left: 10px;
-}
+    h1 {
+      margin: 6px 0 6px 10px;
+      background: linear-gradient(to bottom, $primary-color, $terciary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 3px 0px rgb(1 1 1 / 21%);
+    }
+  }
 
-.base-header .welcome {
-  color: #333;
-  font-size: 14px;
-  margin-right: 10px;
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
 }
