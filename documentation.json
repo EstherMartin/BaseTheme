@@ -27,12 +27,12 @@
         },
         {
             "name": "DropdownValueOptions",
-            "id": "interface-DropdownValueOptions-2727be6fcd0fad3658879bc527ff5997b080810331f56718a9afcdaa4da366ca2bd9e67586be1967bf22335c3ac5b561961b7ef1b69b7bcb495494ae6643bd24",
+            "id": "interface-DropdownValueOptions-984caa3d8b99116a011d8b39da7de59e82b0e19c9c1e9129cb0dbf987a38b2385ab67b41c0779e22406ec8df04eb6b52532c0a80b96168e2730d49f0732e1945",
             "file": "src/stories/components/base-inputs/base-dropdown/base-dropdown.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { FormControl, ReactiveFormsModule } from '@angular/forms';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nexport interface DropdownValueOptions {\r\n  value: number,\r\n  displayName: string,\r\n}\r\n\r\n@Component({\r\n  selector: 'base-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],\r\n  templateUrl: './base-dropdown.component.html',\r\n  styleUrls: ['./base-dropdown.component.scss'],\r\n})\r\n\r\nexport class BaseDropdownComponent {\r\n  @Input() public size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() public label = 'Input';\r\n  @Input() public items: DropdownValueOptions[]=[];\r\n  @Input() public control!: FormControl;\r\n  @Input() public formValidator!: string[];\r\n  @Input() public errorMessage!: string;\r\n  @Input() public required = false;\r\n  @Input() public disabled = false;\r\n\r\n  public get classes(): string[] {\r\n    const sizeClass = `--${this.size}`;\r\n    return ['base-dropdown', `base-dropdown${sizeClass}`];\r\n  }\r\n\r\n  public get errorClasses(): string[] {\r\n    const sizeClass = `.--${this.size}`;\r\n    return ['error-message-input', `error-message-input${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled ? 'disabled' : 'enabled';\r\n  }\r\n\r\n  public get isRequired(): string {\r\n    return this.required ? 'required' : '';\r\n  }\r\n\r\n  public get hasErrorMessage(): boolean {\r\n    return !!this.errorMessage;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { FormControl, ReactiveFormsModule } from '@angular/forms';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\n\r\nexport interface DropdownValueOptions {\r\n  value: number,\r\n  displayName: string,\r\n}\r\n\r\n@Component({\r\n  selector: 'base-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, NgbModule],\r\n  templateUrl: './base-dropdown.component.html',\r\n  styleUrls: ['./base-dropdown.component.scss'],\r\n})\r\n\r\nexport class BaseDropdownComponent {\r\n  @Input() public size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() public label = 'Input';\r\n  @Input() public items: DropdownValueOptions[]=[];\r\n  @Input() public control!: FormControl;\r\n  @Input() public formValidator!: string[];\r\n  @Input() public errorMessage!: string;\r\n  @Input() public required = false;\r\n  @Input() public disabled = false;\r\n\r\n  public get classes(): string[] {\r\n    const sizeClass = `--${this.size}`;\r\n    return ['base-dropdown', `base-dropdown${sizeClass}`];\r\n  }\r\n\r\n  public get errorClasses(): string[] {\r\n    const sizeClass = `.--${this.size}`;\r\n    return ['error-message-input', `error-message-input${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled ? 'disabled' : 'enabled';\r\n  }\r\n\r\n  public get isRequired(): string {\r\n    return this.required ? 'required' : '';\r\n  }\r\n\r\n  public get hasErrorMessage(): boolean {\r\n    return !!this.errorMessage;\r\n  }\r\n}\r\n",
             "properties": [
                 {
                     "name": "displayName",
@@ -41,7 +41,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 9
                 },
                 {
                     "name": "value",
@@ -50,7 +50,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 8
                 }
             ],
             "indexSignatures": [],
@@ -778,7 +778,7 @@
         },
         {
             "name": "BaseDropdownComponent",
-            "id": "component-BaseDropdownComponent-2727be6fcd0fad3658879bc527ff5997b080810331f56718a9afcdaa4da366ca2bd9e67586be1967bf22335c3ac5b561961b7ef1b69b7bcb495494ae6643bd24",
+            "id": "component-BaseDropdownComponent-984caa3d8b99116a011d8b39da7de59e82b0e19c9c1e9129cb0dbf987a38b2385ab67b41c0779e22406ec8df04eb6b52532c0a80b96168e2730d49f0732e1945",
             "file": "src/stories/components/base-inputs/base-dropdown/base-dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -800,7 +800,7 @@
                     "name": "control",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 24,
                     "type": "FormControl",
                     "decorators": []
                 },
@@ -809,7 +809,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -817,7 +817,7 @@
                     "name": "errorMessage",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -825,7 +825,7 @@
                     "name": "formValidator",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 25,
                     "type": "string[]",
                     "decorators": []
                 },
@@ -834,7 +834,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 23,
                     "type": "DropdownValueOptions[]",
                     "decorators": []
                 },
@@ -843,7 +843,7 @@
                     "defaultValue": "'Input'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -852,7 +852,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 27,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -861,7 +861,7 @@
                     "defaultValue": "'large'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 21,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -886,12 +886,16 @@
                 {
                     "name": "FontAwesomeModule",
                     "type": "module"
+                },
+                {
+                    "name": "NgbModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { FormControl, ReactiveFormsModule } from '@angular/forms';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nexport interface DropdownValueOptions {\r\n  value: number,\r\n  displayName: string,\r\n}\r\n\r\n@Component({\r\n  selector: 'base-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],\r\n  templateUrl: './base-dropdown.component.html',\r\n  styleUrls: ['./base-dropdown.component.scss'],\r\n})\r\n\r\nexport class BaseDropdownComponent {\r\n  @Input() public size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() public label = 'Input';\r\n  @Input() public items: DropdownValueOptions[]=[];\r\n  @Input() public control!: FormControl;\r\n  @Input() public formValidator!: string[];\r\n  @Input() public errorMessage!: string;\r\n  @Input() public required = false;\r\n  @Input() public disabled = false;\r\n\r\n  public get classes(): string[] {\r\n    const sizeClass = `--${this.size}`;\r\n    return ['base-dropdown', `base-dropdown${sizeClass}`];\r\n  }\r\n\r\n  public get errorClasses(): string[] {\r\n    const sizeClass = `.--${this.size}`;\r\n    return ['error-message-input', `error-message-input${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled ? 'disabled' : 'enabled';\r\n  }\r\n\r\n  public get isRequired(): string {\r\n    return this.required ? 'required' : '';\r\n  }\r\n\r\n  public get hasErrorMessage(): boolean {\r\n    return !!this.errorMessage;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport { FormControl, ReactiveFormsModule } from '@angular/forms';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\n\r\nexport interface DropdownValueOptions {\r\n  value: number,\r\n  displayName: string,\r\n}\r\n\r\n@Component({\r\n  selector: 'base-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, NgbModule],\r\n  templateUrl: './base-dropdown.component.html',\r\n  styleUrls: ['./base-dropdown.component.scss'],\r\n})\r\n\r\nexport class BaseDropdownComponent {\r\n  @Input() public size: 'small' | 'medium' | 'large' = 'large';\r\n  @Input() public label = 'Input';\r\n  @Input() public items: DropdownValueOptions[]=[];\r\n  @Input() public control!: FormControl;\r\n  @Input() public formValidator!: string[];\r\n  @Input() public errorMessage!: string;\r\n  @Input() public required = false;\r\n  @Input() public disabled = false;\r\n\r\n  public get classes(): string[] {\r\n    const sizeClass = `--${this.size}`;\r\n    return ['base-dropdown', `base-dropdown${sizeClass}`];\r\n  }\r\n\r\n  public get errorClasses(): string[] {\r\n    const sizeClass = `.--${this.size}`;\r\n    return ['error-message-input', `error-message-input${sizeClass}`];\r\n  }\r\n\r\n  public get isDisabled(): string {\r\n    return this.disabled ? 'disabled' : 'enabled';\r\n  }\r\n\r\n  public get isRequired(): string {\r\n    return this.required ? 'required' : '';\r\n  }\r\n\r\n  public get hasErrorMessage(): boolean {\r\n    return !!this.errorMessage;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -908,7 +912,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 28
+                        "line": 30
                     }
                 },
                 "errorClasses": {
@@ -917,7 +921,7 @@
                         "name": "errorClasses",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 33
+                        "line": 35
                     }
                 },
                 "isDisabled": {
@@ -926,7 +930,7 @@
                         "name": "isDisabled",
                         "type": "string",
                         "returnType": "string",
-                        "line": 38
+                        "line": 40
                     }
                 },
                 "isRequired": {
@@ -935,7 +939,7 @@
                         "name": "isRequired",
                         "type": "string",
                         "returnType": "string",
-                        "line": 42
+                        "line": 44
                     }
                 },
                 "hasErrorMessage": {
@@ -944,15 +948,15 @@
                         "name": "hasErrorMessage",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 46
+                        "line": 48
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <select [ngClass]=\"isDisabled\" [formControl]=\"control\" [required]=\"required\">\r\n    <option *ngFor=\"let item of items\" [value]=\"item.value\">\r\n      {{item.displayName}}\r\n    </option>\r\n  </select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-dropdown\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <select [ngClass]=\"isDisabled\" [formControl]=\"control\" [required]=\"required\">\r\n    <option *ngFor=\"let item of items\" [value]=\"item.value\">\r\n      {{item.displayName}}\r\n    </option>\r\n  </select>\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"dropdown\">\r\n  <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Dropdown Example\r\n  <span class=\"caret\"></span></button>\r\n  <ul class=\"dropdown-menu\">\r\n    <li><a href=\"#\">HTML</a></li>\r\n    <li><a href=\"#\">CSS</a></li>\r\n    <li><a href=\"#\">JavaScript</a></li>\r\n  </ul>\r\n</div>"
         },
         {
             "name": "BaseHeaderComponent",
-            "id": "component-BaseHeaderComponent-d1722beb542c9ea52d44b7e8e5abed792bb219165df1183559c3dfb7aab8a6146b74a0cfd12db4e167e4529412fe69a7195f839e2cd279c331095be9223baef3",
+            "id": "component-BaseHeaderComponent-3caa8e3a0a1390aa9aa371d901420d60c4202ffa3329e68c870bb2554abf901d83e1bd60e30a5839ef0f95d42b722f6fe32ca8bfbd43c1e92e5acc105ee5402e",
             "file": "src/stories/components/base-header/base-header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -971,20 +975,29 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "currentlyLoggedInUser",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "CurrentlyLoggedInUser",
-                    "decorators": []
-                },
-                {
-                    "name": "logoPage",
+                    "name": "companyLogo",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 16,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "compayName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "currentlyLoggedInUser",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "CurrentlyLoggedInUser",
                     "decorators": []
                 }
             ],
@@ -994,7 +1007,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "EventEmitter"
                 },
                 {
@@ -1002,7 +1015,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 },
                 {
@@ -1010,19 +1023,19 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "getCompanyName",
+                    "name": "getCompanyLogo",
                     "args": [],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1030,12 +1043,12 @@
                     ]
                 },
                 {
-                    "name": "getLogoPage",
+                    "name": "getCompanyName",
                     "args": [],
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1065,7 +1078,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseButtonComponent } from '../base-buttons/base-button/base-button.component';\r\nimport type { CurrentlyLoggedInUser } from '../../CurrentlyLoggedInUser';\r\nimport { BaseLinearGradientComponent } from '../base-linear-gradient/base-linear-gradient.component';\r\n\r\n@Component({\r\n  selector: 'base-header',\r\n  standalone: true,\r\n  imports: [CommonModule, BaseButtonComponent, BaseLinearGradientComponent],\r\n  templateUrl: './base-header.component.html',\r\n  styleUrls: ['./base-header.component.scss'],\r\n})\r\nexport class BaseHeaderComponent {\r\n  @Input() public currentlyLoggedInUser!: CurrentlyLoggedInUser;\r\n  @Input() public logoPage = '';\r\n  @Output() public onLogin = new EventEmitter<Event>();\r\n  @Output() public onLogout = new EventEmitter<Event>();\r\n  @Output() public onCreateAccount = new EventEmitter<Event>();\r\n\r\n  public getLogoPage(): string {\r\n    return \"../../../assets/mock1.jpeg\";\r\n  }\r\n\r\n  public getCompanyName(): string {\r\n    return 'MockTech'\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseButtonComponent } from '../base-buttons/base-button/base-button.component';\r\nimport type { CurrentlyLoggedInUser } from '../../CurrentlyLoggedInUser';\r\nimport { BaseLinearGradientComponent } from '../base-linear-gradient/base-linear-gradient.component';\r\n\r\n@Component({\r\n  selector: 'base-header',\r\n  standalone: true,\r\n  imports: [CommonModule, BaseButtonComponent, BaseLinearGradientComponent],\r\n  templateUrl: './base-header.component.html',\r\n  styleUrls: ['./base-header.component.scss'],\r\n})\r\nexport class BaseHeaderComponent {\r\n  @Input() public currentlyLoggedInUser!: CurrentlyLoggedInUser;\r\n  @Input() public companyLogo = '';\r\n  @Input() public compayName = '';\r\n  @Output() public onLogin = new EventEmitter<Event>();\r\n  @Output() public onLogout = new EventEmitter<Event>();\r\n  @Output() public onCreateAccount = new EventEmitter<Event>();\r\n\r\n  public getCompanyName(): string {\r\n    return this.compayName != ''?  this.compayName : 'MockTech';\r\n  }\r\n\r\n  public getCompanyLogo(): string {\r\n    return this.companyLogo != ''?  this.compayName : '../../assets/mock1.jpeg';\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1075,7 +1088,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"base-header\">\r\n    <div class=\"company-info\">\r\n        <img src=\"../../../assets/mock1.jpeg\" [alt]=\"getCompanyName()\">\r\n        <h1>{{getCompanyName()}}</h1>\r\n    </div>\r\n    <div class=\"user-info\">\r\n        <div *ngIf=\"currentlyLoggedInUser\">\r\n            <span class=\"welcome\">\r\n                Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!\r\n            </span>\r\n            <base-button *ngIf=\"currentlyLoggedInUser\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></base-button>\r\n        </div>\r\n        <div *ngIf=\"!currentlyLoggedInUser\">\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onLogin.emit($event)\"\r\n                label=\"Entrar\">\r\n            </base-button>\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onCreateAccount.emit($event)\"\r\n                label=\"Nuevo usuario\">\r\n            </base-button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<base-lineal-gradient></base-lineal-gradient>"
+            "templateData": "<div class=\"base-header\">\r\n    <div class=\"company-info\">\r\n        <img  src=\"../../assets/mock1.jpeg\" [alt]=\"getCompanyName()\">\r\n        <h1>{{getCompanyName()}}</h1>\r\n    </div>\r\n    <div class=\"user-info\">\r\n        <div *ngIf=\"currentlyLoggedInUser\">\r\n            <span class=\"welcome\">\r\n                Welcome, <b>{{ currentlyLoggedInUser.displayName }}</b>!\r\n            </span>\r\n            <base-button *ngIf=\"currentlyLoggedInUser\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\"></base-button>\r\n        </div>\r\n        <div *ngIf=\"!currentlyLoggedInUser\">\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onLogin.emit($event)\"\r\n                label=\"Entrar\">\r\n            </base-button>\r\n            <base-button *ngIf=\"!currentlyLoggedInUser\" (onClick)=\"onCreateAccount.emit($event)\"\r\n                label=\"Nuevo usuario\">\r\n            </base-button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<base-lineal-gradient></base-lineal-gradient>"
         },
         {
             "name": "BaseInputComponent",
@@ -1258,7 +1271,7 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-input\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n    <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <input [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"control\"\r\n    [required]=\"required\">\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
+            "templateData": "<div [ngClass]=\"classes\">\r\n  <div class=\"base-label-input\">\r\n    <label [for]=\"control\"> {{label}} </label>\r\n   <i *ngIf=\"required\" class=\"fa fa-asterisk\"></i>\r\n  </div>\r\n  <input [ngClass]=\"isDisabled\" [type]=\"type\" [placeholder]=\"placeholder\" [formControl]=\"control\"\r\n    [required]=\"required\">\r\n  <div *ngIf=\"hasErrorMessage\" [ngClass]=\"errorClasses\">\r\n    <label [for]=\"control\"> {{errorMessage}} </label>\r\n  </div>\r\n</div>"
         },
         {
             "name": "BaseLinearGradientComponent",
@@ -1313,13 +1326,13 @@
     "modules": [
         {
             "name": "BaseDropdownButtonModule",
-            "id": "module-BaseDropdownButtonModule-45b0f671d94f4a579fe9f17426ceb538985fb6def74baf205babce3e9f0486bc88b1360bf8e8a4171b2b278909a41aab401c9b4c480a87c1379e0bf99ec4d736",
+            "id": "module-BaseDropdownButtonModule-37300f3ab1548fedf6810f3a1aee2b37b7d64bb73b12b6f651e81fd5b3090d8a56210668c91fac5947aca258e5da02dc7b705f90ea873a6c0c4ac13747166e94",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/stories/components/base-buttons/base-dropdown-button/base-dropdown-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseLinearGradientComponent } from '../../base-linear-gradient/base-linear-gradient.component';\r\nimport { BaseDropdownButtonComponent } from './base-dropdown-button.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BaseDropdownButtonComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule, \r\n    BaseLinearGradientComponent\r\n  ],\r\n  exports: [\r\n    BaseDropdownButtonComponent,\r\n  ]\r\n})\r\nexport class BaseDropdownButtonModule { }",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseLinearGradientComponent } from '../../base-linear-gradient/base-linear-gradient.component';\r\nimport { BaseDropdownButtonComponent } from './base-dropdown-button.component';\r\nimport { NgbModule } from '@ng-bootstrap/ng-bootstrap';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BaseDropdownButtonComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    CommonModule,\r\n    NgbModule,\r\n    BaseLinearGradientComponent\r\n  ],\r\n  exports: [\r\n    BaseDropdownButtonComponent,\r\n  ]\r\n})\r\nexport class BaseDropdownButtonModule { }",
             "children": [
                 {
                     "type": "providers",
@@ -1460,7 +1473,7 @@
                 "linktype": "component",
                 "name": "BaseHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

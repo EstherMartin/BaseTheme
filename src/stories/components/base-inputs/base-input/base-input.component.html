@@ -1,7 +1,7 @@
 <div [ngClass]="classes">
   <div class="base-label-input">
     <label [for]="control"> {{label}} </label>
-    <i *ngIf="required" class="fa fa-asterisk"></i>
+   <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
   <input [ngClass]="isDisabled" [type]="type" [placeholder]="placeholder" [formControl]="control"
     [required]="required">

@@ -13,16 +13,17 @@ import { BaseLinearGradientComponent } from '../base-linear-gradient/base-linear
 })
 export class BaseHeaderComponent {
   @Input() public currentlyLoggedInUser!: CurrentlyLoggedInUser;
-  @Input() public logoPage = '';
+  @Input() public companyLogo = '';
+  @Input() public compayName = '';
   @Output() public onLogin = new EventEmitter<Event>();
   @Output() public onLogout = new EventEmitter<Event>();
   @Output() public onCreateAccount = new EventEmitter<Event>();
 
-  public getLogoPage(): string {
-    return "../../../assets/mock1.jpeg";
+  public getCompanyName(): string {
+    return this.compayName != ''?  this.compayName : 'MockTech';
   }
 
-  public getCompanyName(): string {
-    return 'MockTech'
+  public getCompanyLogo(): string {
+    return this.companyLogo != ''?  this.compayName : '../../assets/mock1.jpeg';
   }
 }
