@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <button 
+    ngbDropdownToggle
+    type="button"
+    [ngClass]="classes"
+    data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false">
+    {{ getLabel() }}
+  </button>
+  <ul ngbDropdownMenu class="dropdown-menu">
+    <li><a ngbDropdownItem (click)="onClick.emit($event)">Action</a></li>
+    <li><a ngbDropdownItem (click)="onClick.emit($event)">Another action</a></li>
+    <li><a ngbDropdownItem (click)="onClick.emit($event)">Something else here</a></li>
+  </ul>
+</div>

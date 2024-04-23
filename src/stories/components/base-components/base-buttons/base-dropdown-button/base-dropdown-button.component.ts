@@ -1,14 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'base-button',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './base-button.component.html',
-  styleUrls: ['./base-button.component.scss'],
+  selector: 'base-dropdown-button',
+  templateUrl: './base-dropdown-button.component.html',
+  styleUrls: ['../base-buttons.component.scss'],
 })
-export class BaseButtonComponent {
+export class BaseDropdownButtonComponent {
   @Input() type: 'submit' | 'button' = 'button';
   @Input() disable = false;
   @Input() loading = false;
@@ -17,11 +14,11 @@ export class BaseButtonComponent {
 
   public get classes(): string[] {
     const mode = this.disable ? '--disable' : '--enable';
-    const loading = this.loading? '--loading' : '';
-    return ['base-button', `base-button--}`, mode, loading];
+    const loading = this.loading ? '--loading' : '';
+    return ['base-button', `base-button--`, mode, loading];
   }
 
   public getLabel(): string {
-    return this.loading? '' : this.label;
+    return this.loading ? '' : this.label;
   }
 }

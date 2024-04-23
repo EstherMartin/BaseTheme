@@ -3,7 +3,7 @@ import { within, userEvent, expect } from '@storybook/test';
 import { BaseBodyComponent } from './base-body.component';
 
 const meta: Meta<BaseBodyComponent> = {
-  title: 'Base-Components/Body',
+  title: 'Base-Layout/Body',
   component: BaseBodyComponent,
   parameters: {
     layout: 'fullscreen',

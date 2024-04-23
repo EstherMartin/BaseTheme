@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/angular";
 
+const path = require('path');
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -17,7 +19,8 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   staticDirs: ['../src/stories'],
-  webpackFinal: async (config, { configType }) => {
+
+  webpackFinal: async (config) => {
     config.module?.rules?.push({
       test: /\.(png|jpe?g|gif)$/i,
       use: [
@@ -29,6 +32,7 @@ const config: StorybookConfig = {
         },
       ],
     });
+
     return config;
   },
 };

@@ -4,7 +4,7 @@ import { BaseHeaderComponent } from './base-header.component';
 import { fn } from '@storybook/test';
 
 const meta: Meta<BaseHeaderComponent> = {
-  title: 'Base-Components/Header',
+  title: 'Base-Layout/Header',
   component: BaseHeaderComponent,
   tags: ['autodocs'],
   parameters: {

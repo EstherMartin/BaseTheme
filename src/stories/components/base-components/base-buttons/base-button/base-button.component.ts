@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'base-dropdown-button',
-    templateUrl: './base-dropdown-button.component.html',
-    styleUrls: ['./base-dropdown-button.component.scss'],
+  selector: 'base-button',
+  templateUrl: './base-button.component.html',
+  styleUrls: ['../base-buttons.component.scss'],
 })
-export class BaseDropdownButtonComponent {
+export class BaseButtonComponent {
   @Input() type: 'submit' | 'button' = 'button';
   @Input() disable = false;
   @Input() loading = false;
@@ -15,7 +15,7 @@ export class BaseDropdownButtonComponent {
   public get classes(): string[] {
     const mode = this.disable ? '--disable' : '--enable';
     const loading = this.loading? '--loading' : '';
-    return ['base-button', `base-button--}`, mode, loading];
+    return ['base-button', `base-button--`, mode, loading];
   }
 
   public getLabel(): string {

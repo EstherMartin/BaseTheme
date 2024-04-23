@@ -4,8 +4,8 @@
     <i *ngIf="required" class="fa fa-asterisk"></i>
   </div>
   <select [ngClass]="isDisabled" [formControl]="control" [required]="required" [size]="showMultiSelectNumber">
-    <option [value]=""></option>
-    <option *ngFor="let item of items" [value]="item.value">
+    <option class="option" [value]=""></option>
+    <option class="option"  *ngFor="let item of items" [value]="item.value">
       {{item.displayName}}
     </option>
   </select>
