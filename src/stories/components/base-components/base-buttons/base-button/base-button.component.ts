@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'base-button',
+  standalone: true,
   templateUrl: './base-button.component.html',
   styleUrls: ['../base-buttons.component.scss'],
 })

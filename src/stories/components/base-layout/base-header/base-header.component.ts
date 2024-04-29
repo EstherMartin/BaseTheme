@@ -1,13 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CurrentlyLoggedInUser } from '../../../CurrentlyLoggedInUser';
-import { BaseButtonsModule } from '../../base-components/base-buttons/base-buttons.module';
 import { BaseLinearGradientComponent } from '../../base-components/base-linear-gradient/base-linear-gradient.component';
 
 @Component({
   selector: 'base-header',
   standalone: true,
-  imports: [CommonModule, BaseButtonsModule, BaseLinearGradientComponent],
+  imports: [CommonModule, BaseLinearGradientComponent],
   templateUrl: './base-header.component.html',
   styleUrls: ['./base-header.component.scss'],
 })

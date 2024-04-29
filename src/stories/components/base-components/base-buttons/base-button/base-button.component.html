@@ -1,6 +1,9 @@
 <button
+    class="base-button"
     type="{{type}}"
-    [ngClass]="classes"
+    [class.--disable]="disable"
+    [class.--enable]="!disable"
+    [class.--loading]="loading"
     (click)="onClick.emit($event)">
     {{ getLabel() }}
 </button>

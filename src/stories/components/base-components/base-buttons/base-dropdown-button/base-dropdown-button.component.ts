@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'base-dropdown-button',
+  standalone: true,
   templateUrl: './base-dropdown-button.component.html',
   styleUrls: ['../base-buttons.component.scss'],
 })

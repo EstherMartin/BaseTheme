@@ -1,8 +1,11 @@
 <div class="dropdown">
-  <button 
+  <button
+    class="base-button"
     ngbDropdownToggle
     type="button"
-    [ngClass]="classes"
+    [class.--disable]="disable"
+    [class.--enable]="!disable"
+    [class.--loading]="loading"
     data-toggle="dropdown" aria-haspopup="true"
     aria-expanded="false">
     {{ getLabel() }}

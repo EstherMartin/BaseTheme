@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export interface DropdownValueOptions {
   value: number,
@@ -12,7 +11,7 @@ export interface DropdownValueOptions {
 @Component({
   selector: 'base-dropdown',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, NgbModule],
+  imports: [ CommonModule, ReactiveFormsModule, FontAwesomeModule ],
   templateUrl: './base-dropdown.component.html',
   styleUrls: ['./base-dropdown.component.scss'],
 })
