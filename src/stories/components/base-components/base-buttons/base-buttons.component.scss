@@ -1,4 +1,4 @@
-@import '../../../scss/variables/variables.scss';
+@import '/src/scss/variables/variables.scss';
 
 .base-button {
   border-radius: 15px;
@@ -7,10 +7,23 @@
   margin: 20px;
   max-width: fit-content;
   min-width: 150px;
-  min-height: 54px;
-  padding: 15px;
+  height: 44px;
   border: none;
   color: $white-color;
+
+  max-width: fit-content;
+  min-width: 150px;
+  height: 44px;
+
+  ::after {
+    margin-left: 20px;
+    size: 20px;
+  }
+
+  .dropdown-items ul{
+    list-style-type: none;
+    padding-left: 0;
+  }
 
   &.--enable {
     background-color: $primary-color;
@@ -26,13 +39,13 @@
       transform: translateY(-2px);
       box-shadow: 0 5px 5px $darkgrey-color;
     }
-  
+
     &:active {
       transform: translateY(-2px);
       box-shadow: 0 2px 2px $darkgrey-color;
     }
 
-   &.--loading {
+    &.--loading {
       background-color: $secondary-color;
       pointer-events: none;
 
@@ -40,7 +53,7 @@
         border: 2px solid $white-color;
         border-top-color: $terciary-color;
       }
-  
+
       &:before {
         content: '';
         box-sizing: border-box;
@@ -61,7 +74,7 @@
 
   &.--disable {
     pointer-events: none;
-    background-color: $darkgrey-color;  
+    background-color: $darkgrey-color;
     cursor: none;
     transform: translateY(-2px);
     box-shadow: 0 2px 2px $darkgrey-color;

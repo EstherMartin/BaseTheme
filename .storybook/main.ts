@@ -31,6 +31,7 @@ const config: StorybookConfig = {
           },
         },
       ],
+      include: path.resolve(__dirname, '../node_modules/bootstrap/scss'),
     });
 
     return config;

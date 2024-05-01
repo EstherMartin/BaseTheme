@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'base-dropdown-button',
   standalone: true,
+  imports: [ NgbDropdownModule ],
   templateUrl: './base-dropdown-button.component.html',
   styleUrls: ['../base-buttons.component.scss'],
 })

@@ -1,8 +1,9 @@
-<div class="dropdown">
+<div ngbDropdown class="d-inline-block dropdown">
   <button
     class="base-button"
     ngbDropdownToggle
     type="button"
+    id="base-dropdown-button"
     [class.--disable]="disable"
     [class.--enable]="!disable"
     [class.--loading]="loading"
@@ -10,9 +11,11 @@
     aria-expanded="false">
     {{ getLabel() }}
   </button>
-  <ul ngbDropdownMenu class="dropdown-menu">
-    <li><a ngbDropdownItem (click)="onClick.emit($event)">Action</a></li>
-    <li><a ngbDropdownItem (click)="onClick.emit($event)">Another action</a></li>
-    <li><a ngbDropdownItem (click)="onClick.emit($event)">Something else here</a></li>
-  </ul>
+  <div class="dropdown-items" ngbDropdownMenu aria-labelledby="base-dropdown-button">
+    <ul ngbDropdown>
+      <li><a ngbDropdownItem (click)="onClick.emit($event)">Action</a></li>
+      <li><a ngbDropdownItem (click)="onClick.emit($event)">Another action</a></li>
+      <li><a ngbDropdownItem (click)="onClick.emit($event)">Something else here</a></li>
+    </ul>
+  </div>
 </div>
